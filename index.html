@@ -1,0 +1,1191 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+
+<head>
+	<title>Fiona Meisner | Data Analyst Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description"
+		content="Fiona Meisner - Data Analyst portfolio focused on operational analytics, risk intelligence, customer insight, experimentation, and decision-ready reporting." />
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<style>
+		:root {
+			--navy-900: #0c1b36;
+			--navy-800: #11284f;
+			--navy-700: #183b75;
+			--navy-600: #2454a6;
+			--teal-500: #62c5b0;
+			--teal-100: #eefbf7;
+			--blue-050: #f7faff;
+			--blue-100: #edf4ff;
+			--white: #ffffff;
+			--text-900: #1e293b;
+			--text-700: #475569;
+			--text-500: #64748b;
+			--border-soft: 1px solid rgba(24, 59, 117, 0.08);
+			--shadow-soft: 0 16px 38px rgba(15, 23, 42, 0.08);
+			--shadow-hover: 0 22px 48px rgba(15, 23, 42, 0.12);
+			--radius-xl: 24px;
+			--radius-lg: 18px;
+			--radius-md: 14px;
+			--radius-pill: 999px;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			background: linear-gradient(180deg, #f8fbff 0%, #f5f8fd 100%);
+			color: var(--text-900);
+		}
+
+		body,
+		input,
+		select,
+		textarea {
+			color: var(--text-900);
+		}
+
+		a {
+			transition: all 0.2s ease;
+		}
+
+		#wrapper {
+			background: transparent;
+		}
+
+		#header {
+			background: linear-gradient(180deg, #0f2345 0%, #13315f 48%, #1b4b95 100%);
+		}
+
+		#header header p {
+			color: rgba(255, 255, 255, 0.9);
+			font-size: 0.98em;
+			line-height: 1.7;
+			max-width: 16em;
+			margin: 0 auto;
+		}
+
+		#logo a {
+			font-weight: 800;
+			letter-spacing: 0.02em;
+		}
+
+		.image.avatar img {
+			border: 4px solid rgba(255, 255, 255, 0.15);
+			box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+		}
+
+		#main>section>.container {
+			width: min(1180px, calc(100% - 5rem));
+			max-width: 1180px;
+		}
+
+		#main>section {
+			padding-top: 4.4rem;
+			padding-bottom: 4.4rem;
+		}
+
+		.container header.major h2,
+		.container h3,
+		.container h4 {
+			color: var(--navy-800);
+			font-weight: 800;
+			letter-spacing: -0.02em;
+		}
+
+		.container h3 {
+			font-size: clamp(2rem, 2.6vw, 2.6rem);
+			line-height: 1.18;
+			margin-bottom: 0.35em;
+		}
+
+		.container h4 {
+			font-size: 1.18em;
+		}
+
+		.container p,
+		.container li {
+			font-size: 1rem;
+			line-height: 1.8;
+		}
+
+		.intro-tagline {
+			display: inline-block;
+			background: linear-gradient(90deg, var(--blue-100), #f9fbff);
+			color: var(--navy-700);
+			padding: 0.45em 1em;
+			border-radius: var(--radius-pill);
+			font-size: 0.8em;
+			font-weight: 800;
+			margin-bottom: 1em;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			border: 1px solid rgba(24, 59, 117, 0.08);
+		}
+
+		.hero-statement {
+			font-size: 1.24em;
+			line-height: 1.85;
+			margin-bottom: 1.1em;
+		}
+
+		.hero-statement strong {
+			color: var(--navy-800);
+		}
+
+		.section-lead {
+			font-size: 1.08em;
+			color: var(--text-700);
+			max-width: 72rem;
+			line-height: 1.8;
+		}
+
+		.highlight-strip {
+			margin-top: 1.6em;
+			padding: 1.05em 1.25em;
+			border-radius: 16px;
+			background: linear-gradient(90deg, var(--teal-100), var(--blue-100));
+			border: 1px solid rgba(98, 197, 176, 0.16);
+			color: var(--navy-800);
+			font-weight: 700;
+			line-height: 1.7;
+		}
+
+		.value-grid,
+		.metrics-row,
+		.capability-grid,
+		.credential-grid,
+		.project-showcase {
+			display: grid;
+			gap: 1.35rem;
+		}
+
+		.value-grid {
+			grid-template-columns: repeat(3, 1fr);
+			margin-top: 2rem;
+		}
+
+		.metrics-row {
+			grid-template-columns: repeat(4, 1fr);
+			margin-top: 1.8rem;
+		}
+
+		.capability-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			margin-top: 1.8rem;
+		}
+
+		.credential-grid {
+			grid-template-columns: repeat(3, 1fr);
+			margin-top: 1.8rem;
+		}
+
+		.project-showcase {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			margin-top: 2rem;
+			align-items: stretch;
+		}
+
+		.value-card,
+		.metric-card,
+		.capability-card,
+		.credential-card,
+		.project-card,
+		.panel,
+		.experience-card {
+			background: var(--white);
+			border: var(--border-soft);
+			border-radius: var(--radius-xl);
+			box-shadow: var(--shadow-soft);
+		}
+
+		.value-card,
+		.metric-card,
+		.capability-card,
+		.credential-card,
+		.panel,
+		.experience-card {
+			padding: 1.4rem;
+		}
+
+		.value-card,
+		.capability-card,
+		.credential-card,
+		.project-card,
+		.experience-card {
+			transition: transform 0.22s ease, box-shadow 0.22s ease;
+		}
+
+		.value-card:hover,
+		.capability-card:hover,
+		.credential-card:hover,
+		.project-card:hover,
+		.experience-card:hover {
+			transform: translateY(-5px);
+			box-shadow: var(--shadow-hover);
+		}
+
+		.value-card h4,
+		.capability-card h4,
+		.credential-card h4,
+		.experience-card h4 {
+			margin-bottom: 0.45rem;
+		}
+
+		.value-card p,
+		.capability-card p,
+		.credential-card p,
+		.experience-card p {
+			margin-bottom: 0;
+			color: var(--text-700);
+		}
+
+		.metric-card {
+			text-align: center;
+			padding: 1.15rem;
+		}
+
+		.metric-card .number {
+			display: block;
+			font-size: 1.4rem;
+			font-weight: 800;
+			color: var(--navy-800);
+			margin-bottom: 0.22rem;
+		}
+
+		.metric-card .label {
+			color: var(--text-700);
+			font-size: 0.93rem;
+			line-height: 1.55;
+		}
+
+		.capability-card,
+		.panel,
+		.experience-card,
+		.project-card {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.capability-card::before,
+		.panel::before,
+		.experience-card::before,
+		.project-card::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 5px;
+			background: linear-gradient(90deg, var(--navy-700), var(--teal-500));
+		}
+
+		.capability-label,
+		.panel-tag,
+		.project-tag,
+		.experience-tag,
+		.credential-tag {
+			display: inline-block;
+			font-size: 0.78rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: 0.07em;
+			border-radius: var(--radius-pill);
+			padding: 0.35rem 0.75rem;
+			margin-bottom: 0.9rem;
+		}
+
+		.capability-label,
+		.panel-tag,
+		.credential-tag {
+			background: var(--blue-100);
+			color: var(--navy-700);
+		}
+
+		.experience-tag {
+			background: var(--teal-100);
+			color: #2f8f7b;
+		}
+
+		.project-meta {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.55rem;
+			margin-bottom: 0.9rem;
+		}
+
+		.project-tag {
+			background: var(--teal-100);
+			color: #2f8f7b;
+			border: 1px solid rgba(98, 197, 176, 0.18);
+		}
+
+		.project-stack {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.38rem 0.82rem;
+			border-radius: 999px;
+			font-size: 0.75rem;
+			font-weight: 700;
+			background: var(--blue-100);
+			color: var(--navy-700);
+			border: 1px solid rgba(24, 59, 117, 0.08);
+		}
+
+		.experience-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1.35rem;
+			margin-top: 1.8rem;
+		}
+
+		.experience-card ul,
+		.project-bullets,
+		.tbc-list {
+			margin: 0 0 0.5rem 0;
+			padding-left: 1.1rem;
+			color: var(--text-700);
+		}
+
+		.experience-card li,
+		.project-bullets li,
+		.tbc-list li {
+			margin-bottom: 0.5rem;
+			line-height: 1.7;
+		}
+
+		.project-card {
+			padding: 1.35rem;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+		}
+
+		.project-thumb {
+			display: block;
+			border-radius: 16px;
+			overflow: hidden;
+			margin-bottom: 1.2rem;
+			aspect-ratio: 16 / 9;
+			background: var(--blue-100);
+		}
+
+		.project-thumb img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		.project-card h4 {
+			font-size: 1.36rem;
+			line-height: 1.35;
+			margin-bottom: 0.8rem;
+			color: var(--navy-800);
+		}
+
+		.project-summary {
+			color: var(--text-700);
+			margin-bottom: 0.95rem;
+			font-size: 1rem;
+			line-height: 1.8;
+		}
+
+		.project-section-title {
+			font-size: 0.82rem;
+			font-weight: 800;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: var(--navy-700);
+			margin: 1rem 0 0.55rem 0;
+		}
+
+		.project-impact {
+			margin-top: 1rem;
+			padding: 1rem;
+			background: linear-gradient(90deg, #f7fbff, #f1fcf8);
+			border: 1px solid rgba(24, 59, 117, 0.08);
+			border-radius: 16px;
+			color: var(--text-700);
+			line-height: 1.75;
+		}
+
+		.project-impact strong {
+			color: var(--navy-800);
+		}
+
+		.project-footer {
+			margin-top: auto;
+			padding-top: 1rem;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem;
+			align-items: center;
+			border-top: 1px solid rgba(24, 59, 117, 0.08);
+		}
+
+		.project-links a,
+		ul.actions .button,
+		.cv-link {
+			display: inline-block;
+			padding: 0.72rem 1.08rem;
+			border-radius: 999px;
+			font-weight: 700;
+			font-size: 0.92rem;
+			text-decoration: none;
+			border: 1px solid transparent;
+		}
+
+		.project-links a,
+		ul.actions .button.primary,
+		.cv-link.primary {
+			background: linear-gradient(90deg, var(--navy-800), var(--navy-700));
+			color: #fff !important;
+			box-shadow: 0 10px 20px rgba(24, 59, 117, 0.16);
+		}
+
+		.project-links a:hover,
+		ul.actions .button.primary:hover,
+		.cv-link.primary:hover {
+			transform: translateY(-1px);
+			background: var(--navy-800);
+		}
+
+		.project-links a.secondary,
+		ul.actions .button,
+		.cv-link.secondary {
+			background: var(--blue-100);
+			color: var(--navy-700) !important;
+			border-color: rgba(24, 59, 117, 0.1);
+			box-shadow: none;
+		}
+
+		.project-links a.secondary:hover,
+		ul.actions .button:hover,
+		.cv-link.secondary:hover {
+			background: #dfeafb;
+		}
+
+		.tbc-card {
+			background: linear-gradient(180deg, #ffffff 0%, #fafdff 100%);
+			border-style: dashed;
+		}
+
+		.tbc-card .project-thumb {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(135deg, #edf4ff, #effbf8);
+			color: var(--navy-700);
+			font-size: 1rem;
+			font-weight: 800;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+		}
+
+		.panel p,
+		.panel li {
+			color: var(--text-700);
+		}
+
+		.cv-preview-card {
+			background: var(--white);
+			border-radius: 18px;
+			padding: 1rem;
+			box-shadow: var(--shadow-soft);
+			border: var(--border-soft);
+			margin-top: 1.15rem;
+		}
+
+		.cv-preview-card img {
+			border-radius: 12px;
+		}
+
+		.signature-panel .actions {
+			margin-top: 1.2rem;
+		}
+
+		#footer {
+			background: #f6f9fc;
+		}
+
+		#footer .copyright {
+			color: var(--text-500);
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.value-grid,
+			.metrics-row,
+			.capability-grid,
+			.credential-grid,
+			.project-showcase,
+			.experience-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media screen and (max-width: 736px) {
+			#main>section>.container {
+				width: calc(100% - 2rem);
+			}
+
+			#main>section {
+				padding-top: 3.4rem;
+				padding-bottom: 3.4rem;
+			}
+
+			.hero-statement {
+				font-size: 1.08em;
+			}
+
+			.value-card,
+			.metric-card,
+			.capability-card,
+			.credential-card,
+			.project-card,
+			.panel,
+			.experience-card {
+				padding: 1.15rem;
+			}
+
+			.project-card h4 {
+				font-size: 1.22rem;
+			}
+		}
+	</style>
+</head>
+
+<body class="is-preload">
+
+	<section id="header">
+		<header>
+			<span class="image avatar"><img src="images/me.jpg" alt="Fiona Meisner" /></span>
+			<h1 id="logo"><a href="https://www.linkedin.com/in/fiona-meisner/" target="_blank">Fiona Meisner</a></h1>
+			<p>Data Analyst | Operational Analytics, Risk Insight &amp; Decision Support</p>
+		</header>
+
+		<nav id="nav">
+			<ul>
+				<li><a href="#one" class="active">About</a></li>
+				<li><a href="#two">Value</a></li>
+				<li><a href="#experience">Experience</a></li>
+				<li><a href="#three">Projects</a></li>
+				<li><a href="#roadmap">Upcoming Porjects</a></li>
+				<li><a href="#four">CV</a></li>
+				<li><a href="#five">Contact</a></li>
+			</ul>
+		</nav>
+
+		<footer>
+			<ul class="icons">
+				<li><a href="https://www.kaggle.com/fionameisner" class="icon brands fa-kaggle" target="_blank"><span
+							class="label">Kaggle</span></a></li>
+				<li><a href="https://www.linkedin.com/in/fiona-meisner/" class="icon brands fa-linkedin" target="_blank"><span
+							class="label">LinkedIn</span></a></li>
+				<li><a href="https://github.com/meisnerfiona-it" class="icon brands fa-github" target="_blank"><span
+							class="label">GitHub</span></a></li>
+				<li><a href="mailto:meisnerfiona@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a>
+				</li>
+			</ul>
+		</footer>
+	</section>
+
+	<div id="wrapper">
+		<div id="main">
+
+			<section id="one">
+				<div class="image main" data-position="center">
+					<img src="images/earth.jpg" alt="Portfolio banner" />
+				</div>
+
+				<div class="container">
+					<header class="major">
+						<span class="intro-tagline">Data Analyst Portfolio</span>
+						<h2>Turning Data Into Decisions That Matter</h2>
+					</header>
+
+					<p class="hero-statement">
+						<strong>Data Analyst focused on transforming operational, customer, and risk data into decisions that
+							improve
+							performance, reduce inefficiencies, and strengthen business visibility.</strong>
+					</p>
+
+					<p>
+						I bring 3+ years of experience working in business-critical cloud environments, where I’ve worked directly
+						with live production systems, monitoring data, governance reporting, and cross-functional stakeholders. That
+						background gives me a practical understanding of how data behaves in real systems and how it should be used
+						to support action, not just reporting.
+					</p>
+
+					<p>
+						My work sits at the intersection of analytics, operations, and business strategy. Using SQL, Python, Power
+						BI, Tableau, Excel, APIs, and dashboarding tools, I build analysis and reporting that clarify priorities,
+						reveal risk, and support stronger decisions.
+					</p>
+
+					<p>
+						I’m particularly well suited to roles where data is operationally important, commercially relevant, and tied
+						to measurable business outcomes across performance, compliance, customer experience, or process improvement.
+					</p>
+
+					<div class="highlight-strip">
+						Positioning: decision-support analytics across operations, risk, product performance, and business-critical
+						reporting.
+					</div>
+
+					<div class="value-grid">
+						<div class="value-card">
+							<h4>Operational Depth</h4>
+							<p>Experience with live systems, production monitoring, and real operational environments where data
+								quality
+								and timing matter.</p>
+						</div>
+						<div class="value-card">
+							<h4>Commercial Thinking</h4>
+							<p>Strong focus on business trade-offs, measurable value, and analysis that supports prioritisation and
+								decision-making.</p>
+						</div>
+						<div class="value-card">
+							<h4>Executive Communication</h4>
+							<p>Comfortable translating technical findings into clear reporting, stakeholder-ready summaries, and
+								decision
+								narratives.</p>
+						</div>
+					</div>
+
+					<div class="metrics-row">
+						<div class="metric-card">
+							<span class="number">3+ Years</span>
+							<span class="label">Business-critical cloud and operational environments</span>
+						</div>
+						<div class="metric-card">
+							<span class="number">SQL + Python</span>
+							<span class="label">Core analytical workflow and data problem solving</span>
+						</div>
+						<div class="metric-card">
+							<span class="number">Risk + Ops</span>
+							<span class="label">Commercially relevant analytics focus</span>
+						</div>
+						<div class="metric-card">
+							<span class="number">Decision-Ready</span>
+							<span class="label">Reporting built for action, not noise</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="two">
+				<div class="container">
+					<h3>How I Create Business Value</h3>
+					<p class="section-lead">
+						I design and deliver analytical solutions that directly support decision-making, improve operational
+						visibility, and reduce uncertainty across complex environments.
+					</p>
+
+					<div class="capability-grid">
+						<div class="capability-card">
+							<span class="capability-label">Decision Support</span>
+							<h4>Data Analysis &amp; Insight Generation</h4>
+							<p><strong>Tools:</strong> SQL, Python, Excel</p>
+							<p>Structure and analyse complex datasets to identify trends, anomalies, and performance drivers—turning
+								raw data into clear business recommendations.</p>
+						</div>
+
+						<div class="capability-card">
+							<span class="capability-label">Performance</span>
+							<h4>Experimentation &amp; Product Analytics</h4>
+							<p><strong>Focus:</strong> A/B Testing, KPI Tracking, Funnel Analysis</p>
+							<p>Evaluate changes through data, identifying what drives conversion, engagement, adoption, and
+								efficiency.
+							</p>
+						</div>
+
+						<div class="capability-card">
+							<span class="capability-label">Visibility</span>
+							<h4>Dashboarding &amp; Executive Reporting</h4>
+							<p><strong>Tools:</strong> Power BI, Tableau, Grafana</p>
+							<p>Build reporting layers that improve stakeholder visibility, accelerate decisions, and create trust in
+								the
+								numbers.</p>
+						</div>
+
+						<div class="capability-card">
+							<span class="capability-label">Data Systems</span>
+							<h4>Data Integration &amp; Transformation</h4>
+							<p><strong>Tools:</strong> APIs, Python, Data Cleaning</p>
+							<p>Combine and transform multi-source data into structured, analysis-ready datasets for reporting,
+								modeling,
+								and exploration.</p>
+						</div>
+
+						<div class="capability-card">
+							<span class="capability-label">Risk &amp; Ops</span>
+							<h4>Operational &amp; Risk Analytics</h4>
+							<p><strong>Domains:</strong> Operations, Governance, Compliance, Customer Experience</p>
+							<p>Apply analysis to operational performance, control visibility, governance reporting, and business risk
+								reduction.</p>
+						</div>
+
+						<div class="capability-card">
+							<span class="capability-label">Real Environments</span>
+							<h4>Production Data Experience</h4>
+							<p><strong>Background:</strong> Cloud Operations</p>
+							<p>Understand how systems behave in live environments and how to use monitoring, reporting, and structured
+								communication to support stability and performance.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="experience">
+				<div class="container">
+					<h3>Professional Experience</h3>
+					<p class="section-lead">
+						Experience working with live systems, operational reporting, governance visibility, and stakeholder-focused
+						decision support in business-critical environments.
+					</p>
+
+					<div class="experience-grid">
+						<div class="experience-card">
+							<span class="experience-tag">Current Role</span>
+							<h4>Cloud Operations Analyst — Aer Lingus</h4>
+							<p><strong>Focus:</strong> Production monitoring, operational analytics, governance visibility, risk
+								reporting</p>
+							<ul>
+								<li>Designed and improved Grafana dashboards for cloud system performance, enabling earlier visibility
+									into anomalies and operational risk.</li>
+								<li>Worked with governance and risk-related data to support audit readiness, reporting accuracy, and
+									control visibility across teams.</li>
+								<li>Translated technical monitoring data into structured reporting for engineering, security, and
+									operations stakeholders.</li>
+								<li>Strengthened visibility into live system performance through practical analytics and reporting
+									workflows.</li>
+							</ul>
+						</div>
+
+						<div class="experience-card">
+							<span class="experience-tag">Previous Role</span>
+							<h4>Business Support Analyst — Aer Lingus</h4>
+							<p><strong>Focus:</strong> Release support, operational coordination, workflow visibility, stakeholder
+								communication</p>
+							<ul>
+								<li>Supported production and non-production releases, identifying blockers early to reduce disruption
+									and
+									improve delivery confidence.</li>
+								<li>Improved team workflow visibility through structured use of Jira, Confluence, and dashboard-based
+									reporting.</li>
+								<li>Communicated technical issues and findings through clear documentation and stakeholder-ready
+									updates.
+								</li>
+								<li>Built a stronger operational foundation for reporting, coordination, and cross-team clarity.</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel" style="margin-top: 1.5rem;">
+						<span class="panel-tag">Why This Matters</span>
+						<p>
+							This background strengthens my analytics profile because it combines live production exposure with
+							dashboard
+							reporting, risk visibility, cross-functional communication, and practical understanding of how data
+							supports real decisions in operational settings.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="three">
+				<div class="container">
+					<h3>Featured Projects</h3>
+					<p class="section-lead">
+						Selected projects across macroeconomic analysis, risk intelligence, fraud analytics, and predictive
+						modeling—designed to demonstrate structured thinking, commercial relevance, and decision-focused
+						storytelling.
+					</p>
+
+					<div class="highlight-strip">
+						These case studies are presented as business problems, not just technical exercises—focusing on decisions,
+						trade-offs, and measurable impact.
+					</div>
+
+					<div class="project-showcase">
+
+						<article class="project-card">
+							<a href="https://github.com/meisnerfiona-it/economic-impact-of-green-deal" class="project-thumb"
+								target="_blank">
+								<img src="images/Green_deal_unsplash.jpg" alt="European energy shock analysis project preview" />
+							</a>
+
+							<div class="project-meta">
+								<span class="project-tag">Macroeconomic Analytics</span>
+								<span class="project-stack">Python • APIs • Regression</span>
+							</div>
+
+							<h4>Energy Price Shock & Inflation Transmission Across European Economies</h4>
+
+							<p class="project-summary">
+								Designed and executed a cross-country macroeconomic analysis quantifying how energy price shocks propagate into
+								inflation across major EU economies (2015–2023), with a focus on identifying structural differences in inflation
+								sensitivity and persistence under major economic shocks.
+							</p>
+
+							<div class="project-section-title">Approach</div>
+							<ul class="project-bullets">
+							<li>Engineered a harmonized, multi-country time series dataset from Eurostat and ECB APIs, resolving frequency
+								mismatches, missing data, and structural inconsistencies.</li>
+							<li>Developed a clean analytical pipeline to align inflation (HICP) with energy price indices across Germany, France,
+								Italy, and Spain.</li>
+							<li>Quantified the strength and timing of energy-to-inflation transmission using correlation and regression analysis,
+								isolating effects such as the 2021–2022 energy shock.</li>
+							<li>Segmented analysis across macroeconomic regimes (pre-Green Deal and energy crisis) to evaluate shifts in
+								inflation dynamics and persistence.</li>
+							<li>Benchmarked cross-country volatility and resilience, identifying Italy as highly reactive to shocks and France as
+								comparatively stable.</li>
+							</ul>
+
+							<div class="project-impact">
+								<strong>Business impact:</strong> Translates complex macroeconomic data into actionable insight—highlighting how energy-driven inflation risk varies
+								across economies, enabling more informed policy evaluation, market analysis, and strategic decision-making under
+								volatile conditions.
+							</div>
+
+							<div class="project-footer">
+								<div class="project-links">
+									<a href="https://github.com/meisnerfiona-it/economic-impact-of-green-deal" target="_blank">View
+										Project</a>
+								</div>
+							</div>
+						</article>
+
+
+
+
+
+						<article class="project-card">
+							<a href="#" class="project-thumb" target="_blank">
+								<img src="images/bank.jpg" alt="UK regional risk intelligence project preview" />
+							</a>
+
+							<div class="project-meta">
+								<span class="project-tag">Risk Intelligence</span>
+								<span class="project-stack">Python • APIs • Mapping</span>
+							</div>
+
+							<h4>UK Regional Risk Intelligence: Crime and Weather Signal Mapping</h4>
+
+							<p class="project-summary">
+								Combined public crime and environmental data to identify regional risk concentration patterns and show
+								how multi-source analysis can support planning decisions.
+							</p>
+
+							<div class="project-section-title">Approach</div>
+							<ul class="project-bullets">
+								<li>Engineered a unified dataset from UK public crime and weather sources, resolving geographic inconsistencies and
+									missing data using Pandas.</li>
+								<li>Designed a region-level risk scoring framework combining crime frequency and environmental conditions.</li>
+								<li>Performed exploratory and comparative analysis to identify high-risk clusters and temporal patterns.</li>
+								<li>Developed clear visual outputs (Matplotlib) to communicate risk concentration and support prioritisation
+									decisions.</li>
+								<li>Structured the project workflow using Kanban to simulate real-world analytical delivery.</li>
+							</ul>
+
+							<div class="project-impact">
+								<strong>Business impact:</strong> Shows how integrated risk signals can improve visibility, prioritise
+								resources, and support evidence-based regional planning.
+							</div>
+
+							<div class="project-footer">
+								<div class="project-links">
+									<a href="https://github.com/meisnerfiona-it/uk_regional_risk_intelligence" target="_blank">View
+										Project</a>
+							</div>
+						</article>
+
+						<article class="project-card">
+							<a href="#" class="project-thumb" target="_blank">
+								<img src="images/House.jpg" alt="Credit card fraud detection project preview" />
+							</a>
+
+							<div class="project-meta">
+								<span class="project-tag">Fraud Analytics</span>
+								<span class="project-stack">Python • Classification • Risk Analysis</span>
+							</div>
+
+							<h4>Residential Property Valuation Modeling</h4>
+
+							<p class="project-summary">
+								This project builds a machine learning pipeline for residential property valuation using structured preprocessing,
+								feature engineering, and gradient boosting. The objective is to improve pricing accuracy and demonstrate how predictive analytics can support valuation, lending,
+								and market intelligence decisions.
+
+							</p>
+
+							<div class="project-section-title">Approach</div>
+							<ul class="project-bullets">
+								<li>Cleaned and prepared housing data with robust missing-value handling for categorical and numerical features.</li>
+								<li>Engineered features such as total square footage, porch area, weighted bathroom count, and usable outdoor space.
+								</li>
+								<li>Applied one-hot encoding and aligned train/test datasets to preserve a consistent modeling structure.</li>
+								<li>Trained an XGBoost regressor with early stopping and evaluated performance using RMSE on log-transformed prices.
+								</li>
+							</ul>
+
+						<div class="project-impact">
+							<strong>Business impact:</strong> Demonstrates how predictive modeling can support more consistent property valuation,
+							stronger pricing decisions, and improved analytical workflows in real estate or lending contexts.
+						</div>
+
+							<div class="project-footer">
+								<div class="project-links">
+									<a href="https://github.com/meisnerfiona-it/House-Prices-Project-" target="_blank">View Project</a>
+								</div>
+							</div>
+							</article>
+
+
+
+					</div>
+				</div>
+			</section>
+
+			<section id="roadmap">
+				<div class="container">
+					<h3>TBC Projects</h3>
+					<p class="section-lead">
+						These are upcoming case studies I am actively developing to deepen my expertise across product analytics,
+						experimentation, financial modeling, forecasting, and analytics engineering.
+
+						Each project is designed to reflect real world business problems and senior level decision-making.
+
+						I update this section regularly as new work progresses.
+					</p>
+
+					<div class="project-showcase">
+
+
+
+
+
+
+<article class="project-card tbc-card">
+	<a href="#" class="project-thumb" target="_blank">
+		<img src="images/night.jpg" alt="Revenue optimization and customer segmentation project preview" />
+	</a>
+
+	<div class="project-meta">
+		<span class="project-tag">Revenue Analytics</span>
+		<span class="project-stack">SQL • Python • Segmentation • EDA</span>
+	</div>
+
+	<h4>Upcoming: Revenue Optimization & Customer Segmentation Case Study</h4>
+
+	<p class="project-summary">
+		Analyze online retail transactions to identify which customers, products, and purchasing patterns drive the majority
+		of revenue, then translate those findings into recommendations for retention, segmentation, and commercial growth.
+	</p>
+
+	<div class="project-section-title">What I’m exploring</div>
+	<ul class="project-bullets">
+		<li>Which customer segments generate the highest share of revenue.</li>
+		<li>How purchase frequency and basket behavior relate to customer value.</li>
+		<li>Which product patterns reveal the strongest commercial opportunities.</li>
+	</ul>
+
+	<div class="project-section-title">Why this matters</div>
+	<ul class="project-bullets">
+		<li>Demonstrates real-world SQL and business analysis capability using transaction data.</li>
+		<li>Shows how data can support revenue strategy, retention, and customer decision-making.</li>
+		<li>Adds a commercially relevant, insight-led case study to the portfolio.</li>
+	</ul>
+
+	<div class="project-impact">
+		<strong>What this proves:</strong> I can structure business questions, analyze messy transactional data,
+		and turn findings into clear recommendations that support decision-making.
+	</div>
+</article>
+
+<article class="project-card tbc-card">
+	<a href="#" class="project-thumb" target="_blank">
+		<img src="images/Case.jpg" alt="Demand forecasting and capacity planning project preview" />
+	</a>
+
+	<div class="project-meta">
+		<span class="project-tag">Forecasting</span>
+		<span class="project-stack">Python • Time Series • Business Planning</span>
+	</div>
+
+	<h4>Upcoming: Demand Forecasting & Capacity Planning Case Study</h4>
+
+	<p class="project-summary">
+		Build a forecasting case study that predicts future demand patterns and translates those projections into practical
+		recommendations for staffing, inventory, and operational planning.
+	</p>
+
+	<div class="project-section-title">What I’m exploring</div>
+	<ul class="project-bullets">
+		<li>How demand changes over time across different periods, products, or segments.</li>
+		<li>Which trends and seasonal patterns most affect operational planning.</li>
+		<li>How forecast outputs can support better staffing, stock, and service decisions.</li>
+	</ul>
+
+	<div class="project-section-title">Why this matters</div>
+	<ul class="project-bullets">
+		<li>Shows how predictive analysis can support real business planning rather than standalone modeling.</li>
+		<li>Demonstrates the ability to connect forecasts to cost, service quality, and operational efficiency.</li>
+		<li>Strengthens the portfolio with work relevant to retail, logistics, operations, and planning-focused roles.</li>
+	</ul>
+
+	<div class="project-impact">
+		<strong>What this proves:</strong> I can move from forecasting output to business action by translating analytical
+		results into practical recommendations that support planning and performance.
+	</div>
+</article>
+
+					</div>
+
+					<div class="panel" style="margin-top: 1.5rem;">
+						<span class="panel-tag">My Approach</span>
+						<p>
+							I’m building this portfolio with the expectation of operating at a high level. Each project is an opportunity to
+							develop not just technical skills, but the ability to think critically, solve business problems, and deliver work
+							that has real impact.
+						</p>
+						<p>
+							I treat every case study as a step toward that standard — focusing on clarity, rigor, and decision-making.
+						</p>
+						</div>
+				</div>
+			</section>
+
+		<section id="four">
+			<div class="container">
+				<h3 style="text-align: center; margin-bottom: 1rem;">Professional Background</h3>
+
+				<div class="panel" style="text-align: center; padding: 2.75rem 2rem; background: #fafafa; border-radius: 14px;">
+
+					<span class="panel-tag">CV Preview</span>
+
+					<p style="max-width: 720px; margin: 0.85rem auto 2.2rem; line-height: 1.7;">
+						A concise overview of my experience across cloud operations, production monitoring, governance support,
+						reporting, and analytical project work.
+					</p>
+
+					<div class="cv-preview-card" style="display: flex; justify-content: center; align-items: center;">
+						<div style="
+							display: inline-block;
+							padding: 0.9rem;
+							background: #ffffff;
+							border: 1px solid rgba(0, 0, 0, 0.08);
+							border-radius: 14px;
+							box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+						">
+							<img src="images/Fiona-CV-2025.jpg" alt="Preview of Fiona Meisner CV" style="
+									display: block;
+									max-width: 650px;
+									width: 100%;
+									height: auto;
+									border-radius: 8px;
+								" />
+						</div>
+					</div>
+
+					<p style="max-width: 620px; margin: 1.5rem auto 0; font-size: 0.95rem; color: #666; line-height: 1.6;">
+						A visual of my CV, as a quick reference within the portfolio.
+					</p>
+
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="five">
+			<div class="container">
+				<div class="panel signature-panel" style="text-align: center;">
+
+					<span class="panel-tag">Let’s Connect</span>
+
+					<h3>Open to Data Analyst Opportunities With Real Business Impact</h3>
+
+					<p class="section-lead" style="max-width: 700px; margin: 0 auto;">
+						I’m particularly interested in roles across operational analytics, product analytics, customer insight,
+						risk reporting, and decision-support analysis where data can directly improve performance and influence
+						strategy.
+					</p>
+
+					<p style="max-width: 650px; margin: 1rem auto 2rem;">
+						If you’re looking for someone who can move beyond reporting and actively support stronger decisions
+						through data, I’d be glad to connect.
+					</p>
+
+					<ul class="actions"
+						style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; padding-left: 0;">
+
+						<li style="list-style: none;">
+							<a href="mailto:meisnerfiona@gmail.com" class="button primary"
+								style="display: inline-flex; align-items: center; justify-content: center; min-width: 150px;">
+								Email Me
+							</a>
+						</li>
+
+						<li style="list-style: none;">
+							<a href="https://www.linkedin.com/in/fiona-meisner/" class="button" target="_blank"
+								style="display: inline-flex; align-items: center; justify-content: center; min-width: 150px;">
+								View LinkedIn
+							</a>
+						</li>
+
+						<li style="list-style: none;">
+							<a href="https://github.com/meisnerfiona-it" class="button" target="_blank"
+								style="display: inline-flex; align-items: center; justify-content: center; min-width: 150px;">
+								View GitHub
+							</a>
+						</li>
+
+					</ul>
+
+				</div>
+			</div>
+		</section>
+
+		</div>
+
+		<section id="footer">
+			<div class="container">
+				<ul class="copyright">
+					<li>&copy; Fiona Meisner. Built to show analytical judgment, commercial value, and decision ready thinking.
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
+</html>
