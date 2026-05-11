@@ -1,1228 +1,1513 @@
 <!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
--->
-<html>
+<html lang="en">
 
 <head>
-	<title>Fiona Meisner | Data Analyst Portfolio</title>
+	<title>Fiona Meisner — Data Analyst</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description"
-		content="Fiona Meisner - Data Analyst portfolio focused on operational analytics, risk intelligence, customer insight, experimentation, and decision-ready reporting." />
-	<link rel="stylesheet" href="assets/css/main.css" />
+		content="Fiona Meisner — Data Analyst specializing in operational analytics, risk intelligence, and decision-ready reporting." />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+		rel="stylesheet">
 
 	<style>
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
 		:root {
-			--navy-900: #0c1b36;
-			--navy-800: #11284f;
-			--navy-700: #183b75;
-			--navy-600: #2454a6;
-			--teal-500: #62c5b0;
-			--teal-100: #eefbf7;
-			--blue-050: #f7faff;
-			--blue-100: #edf4ff;
-			--white: #ffffff;
-			--text-900: #1e293b;
-			--text-700: #475569;
-			--text-500: #64748b;
-			--border-soft: 1px solid rgba(24, 59, 117, 0.08);
-			--shadow-soft: 0 16px 38px rgba(15, 23, 42, 0.08);
-			--shadow-hover: 0 22px 48px rgba(15, 23, 42, 0.12);
-			--radius-xl: 24px;
-			--radius-lg: 18px;
-			--radius-md: 14px;
-			--radius-pill: 999px;
+			--ink: #0d1117;
+			--ink-60: rgba(13, 17, 23, 0.6);
+			--ink-30: rgba(13, 17, 23, 0.3);
+			--ink-10: rgba(13, 17, 23, 0.07);
+			--paper: #f9f7f3;
+			--paper-warm: #f3f0e9;
+			--accent: #1a3f6f;
+			--accent-mid: #2e5fa3;
+			--accent-light: #dde8f7;
+			--teal: #0d7a65;
+			--teal-light: #d4f0eb;
+			--serif: 'Playfair Display', Georgia, serif;
+			--sans: 'DM Sans', system-ui, sans-serif;
+			--nav-w: 280px;
+			--ease: cubic-bezier(0.23, 1, 0.32, 1);
 		}
 
 		html {
 			scroll-behavior: smooth;
+			font-size: 16px;
 		}
 
 		body {
-			background: linear-gradient(180deg, #f8fbff 0%, #f5f8fd 100%);
-			color: var(--text-900);
-		}
-
-		body,
-		input,
-		select,
-		textarea {
-			color: var(--text-900);
-		}
-
-		a {
-			transition: all 0.2s ease;
-		}
-
-		#wrapper {
-			background: transparent;
-		}
-
-		#header {
-			background: linear-gradient(180deg, #0f2345 0%, #13315f 48%, #1b4b95 100%);
-		}
-
-		#header header p {
-			color: rgba(255, 255, 255, 0.9);
-			font-size: 0.98em;
+			font-family: var(--sans);
+			background: var(--paper);
+			color: var(--ink);
 			line-height: 1.7;
-			max-width: 16em;
-			margin: 0 auto;
+			min-height: 100vh;
 		}
 
-		#logo a {
-			font-weight: 800;
-			letter-spacing: 0.02em;
+		/* ── SIDEBAR ── */
+		#sidebar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: var(--nav-w);
+			height: 100vh;
+			background: var(--ink);
+			display: flex;
+			flex-direction: column;
+			z-index: 100;
+			overflow: hidden;
 		}
 
-		.image.avatar img {
-			border: 4px solid rgba(255, 255, 255, 0.15);
-			box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+		.sidebar-inner {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			padding: 2.5rem 2rem;
 		}
 
-		#main>section>.container {
-			width: min(1180px, calc(100% - 5rem));
-			max-width: 1180px;
+		.sidebar-avatar {
+			width: 72px;
+			height: 72px;
+			border-radius: 50%;
+			border: 2px solid rgba(255, 255, 255, 0.15);
+			object-fit: cover;
+			margin-bottom: 1.25rem;
 		}
 
-		#main>section {
-			padding-top: 4.4rem;
-			padding-bottom: 4.4rem;
-		}
-
-		.container header.major h2,
-		.container h3,
-		.container h4 {
-			color: var(--navy-800);
-			font-weight: 800;
-			letter-spacing: -0.02em;
-		}
-
-		.container h3 {
-			font-size: clamp(2rem, 2.6vw, 2.6rem);
-			line-height: 1.18;
-			margin-bottom: 0.35em;
-		}
-
-		.container h4 {
-			font-size: 1.18em;
-		}
-
-		.container p,
-		.container li {
-			font-size: 1rem;
-			line-height: 1.8;
-		}
-
-		.intro-tagline {
-			display: inline-block;
-			background: linear-gradient(90deg, var(--blue-100), #f9fbff);
-			color: var(--navy-700);
-			padding: 0.45em 1em;
-			border-radius: var(--radius-pill);
-			font-size: 0.8em;
-			font-weight: 800;
-			margin-bottom: 1em;
-			letter-spacing: 0.08em;
-			text-transform: uppercase;
-			border: 1px solid rgba(24, 59, 117, 0.08);
-		}
-
-		.hero-statement {
-			font-size: 1.24em;
-			line-height: 1.85;
-			margin-bottom: 1.1em;
-		}
-
-		.hero-statement strong {
-			color: var(--navy-800);
-		}
-
-		.section-lead {
-			font-size: 1.08em;
-			color: var(--text-700);
-			max-width: 72rem;
-			line-height: 1.8;
-		}
-
-		.highlight-strip {
-			margin-top: 1.6em;
-			padding: 1.05em 1.25em;
-			border-radius: 16px;
-			background: linear-gradient(90deg, var(--teal-100), var(--blue-100));
-			border: 1px solid rgba(98, 197, 176, 0.16);
-			color: var(--navy-800);
+		.sidebar-name {
+			font-family: var(--serif);
+			font-size: 1.35rem;
 			font-weight: 700;
-			line-height: 1.7;
+			color: #fff;
+			line-height: 1.2;
+			margin-bottom: 0.35rem;
 		}
 
-		.value-grid,
-		.metrics-row,
-		.capability-grid,
-		.credential-grid,
-		.project-showcase {
+		.sidebar-role {
+			font-size: 0.78rem;
+			font-weight: 400;
+			color: rgba(255, 255, 255, 0.5);
+			line-height: 1.5;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			margin-bottom: 2.5rem;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			padding-bottom: 2rem;
+		}
+
+		#nav {
+			flex: 1;
+		}
+
+		#nav ul {
+			list-style: none;
+		}
+
+		#nav ul li {
+			margin-bottom: 0.15rem;
+		}
+
+		#nav ul li a {
+			display: flex;
+			align-items: center;
+			gap: 0.65rem;
+			padding: 0.55rem 0.75rem;
+			color: rgba(255, 255, 255, 0.52);
+			text-decoration: none;
+			font-size: 0.875rem;
+			font-weight: 400;
+			border-radius: 8px;
+			transition: all 0.2s var(--ease);
+			letter-spacing: 0.01em;
+		}
+
+		#nav ul li a:hover,
+		#nav ul li a.active {
+			color: #fff;
+			background: rgba(255, 255, 255, 0.08);
+		}
+
+		#nav ul li a.active {
+			font-weight: 500;
+		}
+
+		.nav-dot {
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.25);
+			flex-shrink: 0;
+			transition: background 0.2s;
+		}
+
+		#nav ul li a.active .nav-dot {
+			background: var(--accent-mid);
+		}
+
+		.sidebar-socials {
+			display: flex;
+			gap: 1rem;
+			padding-top: 1.5rem;
+			border-top: 1px solid rgba(255, 255, 255, 0.08);
+			margin-top: auto;
+		}
+
+		.sidebar-socials a {
+			color: rgba(255, 255, 255, 0.38);
+			text-decoration: none;
+			font-size: 0.75rem;
+			font-weight: 500;
+			letter-spacing: 0.04em;
+			transition: color 0.2s;
+		}
+
+		.sidebar-socials a:hover {
+			color: #fff;
+		}
+
+		/* ── MAIN ── */
+		#main {
+			margin-left: var(--nav-w);
+			min-height: 100vh;
+		}
+
+		/* ── HERO ── */
+		#hero {
+			min-height: 100vh;
 			display: grid;
-			gap: 1.35rem;
-		}
-
-		.value-grid {
-			grid-template-columns: repeat(3, 1fr);
-			margin-top: 2rem;
-		}
-
-		.metrics-row {
-			grid-template-columns: repeat(4, 1fr);
-			margin-top: 1.8rem;
-		}
-
-		.capability-grid {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			margin-top: 1.8rem;
-		}
-
-		.credential-grid {
-			grid-template-columns: repeat(3, 1fr);
-			margin-top: 1.8rem;
-		}
-
-		.project-showcase {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			margin-top: 2rem;
-			align-items: stretch;
-		}
-
-		.value-card,
-		.metric-card,
-		.capability-card,
-		.credential-card,
-		.project-card,
-		.panel,
-		.experience-card {
-			background: var(--white);
-			border: var(--border-soft);
-			border-radius: var(--radius-xl);
-			box-shadow: var(--shadow-soft);
-		}
-
-		.value-card,
-		.metric-card,
-		.capability-card,
-		.credential-card,
-		.panel,
-		.experience-card {
-			padding: 1.4rem;
-		}
-
-		.value-card,
-		.capability-card,
-		.credential-card,
-		.project-card,
-		.experience-card {
-			transition: transform 0.22s ease, box-shadow 0.22s ease;
-		}
-
-		.value-card:hover,
-		.capability-card:hover,
-		.credential-card:hover,
-		.project-card:hover,
-		.experience-card:hover {
-			transform: translateY(-5px);
-			box-shadow: var(--shadow-hover);
-		}
-
-		.value-card h4,
-		.capability-card h4,
-		.credential-card h4,
-		.experience-card h4 {
-			margin-bottom: 0.45rem;
-		}
-
-		.value-card p,
-		.capability-card p,
-		.credential-card p,
-		.experience-card p {
-			margin-bottom: 0;
-			color: var(--text-700);
-		}
-
-		.metric-card {
-			text-align: center;
-			padding: 1.15rem;
-		}
-
-		.metric-card .number {
-			display: block;
-			font-size: 1.4rem;
-			font-weight: 800;
-			color: var(--navy-800);
-			margin-bottom: 0.22rem;
-		}
-
-		.metric-card .label {
-			color: var(--text-700);
-			font-size: 0.93rem;
-			line-height: 1.55;
-		}
-
-		.capability-card,
-		.panel,
-		.experience-card,
-		.project-card {
+			grid-template-columns: 1fr 420px;
+			gap: 0;
 			position: relative;
 			overflow: hidden;
 		}
 
-		.capability-card::before,
-		.panel::before,
-		.experience-card::before,
-		.project-card::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 5px;
-			background: linear-gradient(90deg, var(--navy-700), var(--teal-500));
-		}
-
-		.capability-label,
-		.panel-tag,
-		.project-tag,
-		.experience-tag,
-		.credential-tag {
-			display: inline-block;
-			font-size: 0.78rem;
-			font-weight: 800;
-			text-transform: uppercase;
-			letter-spacing: 0.07em;
-			border-radius: var(--radius-pill);
-			padding: 0.35rem 0.75rem;
-			margin-bottom: 0.9rem;
-		}
-
-		.capability-label,
-		.panel-tag,
-		.credential-tag {
-			background: var(--blue-100);
-			color: var(--navy-700);
-		}
-
-		.experience-tag {
-			background: var(--teal-100);
-			color: #2f8f7b;
-		}
-
-		.project-meta {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.55rem;
-			margin-bottom: 0.9rem;
-		}
-
-		.project-tag {
-			background: var(--teal-100);
-			color: #2f8f7b;
-			border: 1px solid rgba(98, 197, 176, 0.18);
-		}
-
-		.project-stack {
-			display: inline-flex;
-			align-items: center;
-			padding: 0.38rem 0.82rem;
-			border-radius: 999px;
-			font-size: 0.75rem;
-			font-weight: 700;
-			background: var(--blue-100);
-			color: var(--navy-700);
-			border: 1px solid rgba(24, 59, 117, 0.08);
-		}
-
-		.experience-grid {
-			display: grid;
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 1.35rem;
-			margin-top: 1.8rem;
-		}
-
-		.experience-card ul,
-		.project-bullets,
-		.tbc-list {
-			margin: 0 0 0.5rem 0;
-			padding-left: 1.1rem;
-			color: var(--text-700);
-		}
-
-		.experience-card li,
-		.project-bullets li,
-		.tbc-list li {
-			margin-bottom: 0.5rem;
-			line-height: 1.7;
-		}
-
-		.project-card {
-			padding: 1.35rem;
+		.hero-content {
+			padding: 7rem 4.5rem 5rem 5rem;
 			display: flex;
 			flex-direction: column;
-			height: 100%;
-			background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+			justify-content: center;
+			position: relative;
+			z-index: 2;
 		}
 
-		.project-thumb {
-			display: block;
-			border-radius: 16px;
-			overflow: hidden;
-			margin-bottom: 1.2rem;
-			aspect-ratio: 16 / 9;
-			background: var(--blue-100);
-		}
-
-		.project-thumb img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			display: block;
-		}
-
-		.project-card h4 {
-			font-size: 1.36rem;
-			line-height: 1.35;
-			margin-bottom: 0.8rem;
-			color: var(--navy-800);
-		}
-
-		.project-summary {
-			color: var(--text-700);
-			margin-bottom: 0.95rem;
-			font-size: 1rem;
-			line-height: 1.8;
-		}
-
-		.project-section-title {
-			font-size: 0.82rem;
-			font-weight: 800;
-			letter-spacing: 0.06em;
+		.hero-eyebrow {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			font-size: 0.72rem;
+			font-weight: 500;
+			letter-spacing: 0.12em;
 			text-transform: uppercase;
-			color: var(--navy-700);
-			margin: 1rem 0 0.55rem 0;
+			color: var(--teal);
+			margin-bottom: 1.75rem;
 		}
 
-		.project-impact {
-			margin-top: 1rem;
-			padding: 1rem;
-			background: linear-gradient(90deg, #f7fbff, #f1fcf8);
-			border: 1px solid rgba(24, 59, 117, 0.08);
-			border-radius: 16px;
-			color: var(--text-700);
+		.hero-eyebrow::before {
+			content: '';
+			display: block;
+			width: 24px;
+			height: 1.5px;
+			background: var(--teal);
+		}
+
+		.hero-headline {
+			font-family: var(--serif);
+			font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+			font-weight: 900;
+			line-height: 1.08;
+			letter-spacing: -0.025em;
+			color: var(--ink);
+			margin-bottom: 2rem;
+		}
+
+		.hero-headline em {
+			font-style: italic;
+			color: var(--accent);
+		}
+
+		.hero-body {
+			font-size: 1.08rem;
+			color: var(--ink-60);
+			max-width: 520px;
 			line-height: 1.75;
+			margin-bottom: 2.5rem;
 		}
 
-		.project-impact strong {
-			color: var(--navy-800);
-		}
-
-		.project-footer {
-			margin-top: auto;
-			padding-top: 1rem;
+		.hero-tags {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 0.75rem;
-			align-items: center;
-			border-top: 1px solid rgba(24, 59, 117, 0.08);
+			gap: 0.6rem;
+			margin-bottom: 3rem;
 		}
 
-		.project-links a,
-		ul.actions .button,
-		.cv-link {
+		.tag {
 			display: inline-block;
-			padding: 0.72rem 1.08rem;
+			padding: 0.38rem 0.9rem;
 			border-radius: 999px;
-			font-weight: 700;
-			font-size: 0.92rem;
+			font-size: 0.78rem;
+			font-weight: 500;
+			letter-spacing: 0.02em;
+		}
+
+		.tag-navy {
+			background: var(--accent-light);
+			color: var(--accent);
+		}
+
+		.tag-teal {
+			background: var(--teal-light);
+			color: var(--teal);
+		}
+
+		.tag-ink {
+			background: var(--ink-10);
+			color: var(--ink);
+		}
+
+		.hero-actions {
+			display: flex;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0.8rem 1.5rem;
+			border-radius: 8px;
+			font-family: var(--sans);
+			font-size: 0.875rem;
+			font-weight: 500;
 			text-decoration: none;
-			border: 1px solid transparent;
+			transition: all 0.2s var(--ease);
+			cursor: pointer;
+			border: none;
 		}
 
-		.project-links a,
-		ul.actions .button.primary,
-		.cv-link.primary {
-			background: linear-gradient(90deg, var(--navy-800), var(--navy-700));
-			color: #fff !important;
-			box-shadow: 0 10px 20px rgba(24, 59, 117, 0.16);
+		.btn-primary {
+			background: var(--ink);
+			color: #fff;
+			box-shadow: 0 8px 24px rgba(13, 17, 23, 0.16);
 		}
 
-		.project-links a:hover,
-		ul.actions .button.primary:hover,
-		.cv-link.primary:hover {
-			transform: translateY(-1px);
-			background: var(--navy-800);
+		.btn-primary:hover {
+			background: var(--accent);
+			transform: translateY(-2px);
+			box-shadow: 0 12px 32px rgba(13, 17, 23, 0.22);
 		}
 
-		.project-links a.secondary,
-		ul.actions .button,
-		.cv-link.secondary {
-			background: var(--blue-100);
-			color: var(--navy-700) !important;
-			border-color: rgba(24, 59, 117, 0.1);
-			box-shadow: none;
+		.btn-ghost {
+			background: transparent;
+			color: var(--ink);
+			border: 1.5px solid var(--ink-30);
 		}
 
-		.project-links a.secondary:hover,
-		ul.actions .button:hover,
-		.cv-link.secondary:hover {
-			background: #dfeafb;
+		.btn-ghost:hover {
+			background: var(--ink);
+			color: #fff;
+			border-color: var(--ink);
+			transform: translateY(-2px);
 		}
 
-		.tbc-card {
-			background: linear-gradient(180deg, #ffffff 0%, #fafdff 100%);
-			border-style: dashed;
+		.hero-panel {
+			background: var(--ink);
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			padding: 4rem 2.75rem;
+			position: relative;
+			overflow: hidden;
 		}
 
-		.tbc-card .project-thumb {
+		.hero-panel::before {
+			content: '';
+			position: absolute;
+			top: -120px;
+			right: -120px;
+			width: 380px;
+			height: 380px;
+			border-radius: 50%;
+			background: rgba(46, 95, 163, 0.2);
+			pointer-events: none;
+		}
+
+		.hero-panel-photo {
+			width: 100%;
+			aspect-ratio: 4/5;
+			object-fit: cover;
+			border-radius: 16px;
+			filter: grayscale(20%);
+			opacity: 0.88;
+			margin-bottom: 2.5rem;
+			position: relative;
+			z-index: 1;
+		}
+
+		.stat-row {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1px;
+			background: rgba(255, 255, 255, 0.08);
+			border-radius: 12px;
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+		}
+
+		.stat-cell {
+			background: rgba(255, 255, 255, 0.04);
+			padding: 1rem 0.85rem;
+			text-align: center;
+		}
+
+		.stat-number {
+			display: block;
+			font-family: var(--serif);
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #fff;
+			line-height: 1;
+			margin-bottom: 0.3rem;
+		}
+
+		.stat-label {
+			font-size: 0.7rem;
+			color: rgba(255, 255, 255, 0.45);
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			line-height: 1.4;
+		}
+
+		/* ── SECTIONS ── */
+		section {
+			padding: 6rem 5rem;
+			border-top: 1px solid var(--ink-10);
+		}
+
+		section:nth-child(even) {
+			background: #fff;
+		}
+
+		.section-label {
+			font-size: 0.7rem;
+			font-weight: 500;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+			color: var(--teal);
+			margin-bottom: 0.75rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.section-label::before {
+			content: '';
+			display: block;
+			width: 20px;
+			height: 1.5px;
+			background: var(--teal);
+		}
+
+		.section-title {
+			font-family: var(--serif);
+			font-size: clamp(1.9rem, 3vw, 2.8rem);
+			font-weight: 700;
+			line-height: 1.15;
+			letter-spacing: -0.02em;
+			color: var(--ink);
+			margin-bottom: 1rem;
+		}
+
+		.section-intro {
+			font-size: 1.05rem;
+			color: var(--ink-60);
+			max-width: 640px;
+			line-height: 1.75;
+			margin-bottom: 3.5rem;
+		}
+
+		/* ── VALUE GRID ── */
+		.capability-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1.25rem;
+		}
+
+		.cap-card {
+			background: #fff;
+			border: 1px solid var(--ink-10);
+			border-radius: 16px;
+			padding: 1.75rem;
+			transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+			position: relative;
+			overflow: hidden;
+		}
+
+		section:nth-child(even) .cap-card {
+			background: var(--paper);
+		}
+
+		.cap-card::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 3px;
+			background: linear-gradient(90deg, var(--accent), var(--teal));
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 0.3s var(--ease);
+		}
+
+		.cap-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 16px 40px rgba(13, 17, 23, 0.09);
+		}
+
+		.cap-card:hover::after {
+			transform: scaleX(1);
+		}
+
+		.cap-icon {
+			width: 40px;
+			height: 40px;
+			border-radius: 10px;
+			background: var(--accent-light);
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			background: linear-gradient(135deg, #edf4ff, #effbf8);
-			color: var(--navy-700);
-			font-size: 1rem;
-			font-weight: 800;
-			letter-spacing: 0.05em;
+			margin-bottom: 1.1rem;
+			font-size: 1.1rem;
+		}
+
+		.cap-label {
+			font-size: 0.68rem;
+			font-weight: 600;
+			letter-spacing: 0.1em;
 			text-transform: uppercase;
+			color: var(--accent-mid);
+			margin-bottom: 0.5rem;
 		}
 
-		.panel p,
-		.panel li {
-			color: var(--text-700);
+		.cap-title {
+			font-size: 1rem;
+			font-weight: 600;
+			color: var(--ink);
+			margin-bottom: 0.55rem;
+			line-height: 1.3;
 		}
 
-		.cv-preview-card {
-			background: var(--white);
-			border-radius: 18px;
-			padding: 1rem;
-			box-shadow: var(--shadow-soft);
-			border: var(--border-soft);
-			margin-top: 1.15rem;
+		.cap-body {
+			font-size: 0.875rem;
+			color: var(--ink-60);
+			line-height: 1.65;
 		}
 
-		.cv-preview-card img {
-			border-radius: 12px;
+		.cap-tools {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.4rem;
+			margin-top: 1rem;
 		}
 
-		.signature-panel .actions {
-			margin-top: 1.2rem;
+		.tool-pill {
+			font-size: 0.7rem;
+			font-weight: 500;
+			background: var(--accent-light);
+			color: var(--accent);
+			padding: 0.22rem 0.6rem;
+			border-radius: 999px;
 		}
 
-		#footer {
-			background: #f6f9fc;
+		/* ── EXPERIENCE ── */
+		.exp-list {
+			display: flex;
+			flex-direction: column;
+			gap: 0;
 		}
 
-		#footer .copyright {
-			color: var(--text-500);
+		.exp-item {
+			display: grid;
+			grid-template-columns: 200px 1fr;
+			gap: 0 3rem;
+			padding: 2.75rem 0;
+			border-bottom: 1px solid var(--ink-10);
+			position: relative;
 		}
 
-		@media screen and (max-width: 980px) {
+		.exp-item:first-child {
+			padding-top: 0;
+		}
 
-			.value-grid,
-			.metrics-row,
-			.capability-grid,
-			.credential-grid,
-			.project-showcase,
-			.experience-grid {
+		.exp-item:last-child {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+
+		.exp-meta {
+			padding-top: 0.1rem;
+		}
+
+		.exp-period {
+			font-size: 0.75rem;
+			font-weight: 500;
+			color: var(--ink-60);
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			margin-bottom: 0.5rem;
+		}
+
+		.exp-badge {
+			display: inline-block;
+			font-size: 0.68rem;
+			font-weight: 600;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			padding: 0.28rem 0.65rem;
+			border-radius: 999px;
+			background: var(--teal-light);
+			color: var(--teal);
+		}
+
+		.exp-badge.current {
+			background: var(--accent-light);
+			color: var(--accent-mid);
+		}
+
+		.exp-role {
+			font-size: 1.2rem;
+			font-weight: 600;
+			color: var(--ink);
+			line-height: 1.25;
+			margin-bottom: 0.3rem;
+		}
+
+		.exp-company {
+			font-size: 0.9rem;
+			color: var(--ink-60);
+			margin-bottom: 1.25rem;
+		}
+
+		.exp-bullets {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			gap: 0.6rem;
+		}
+
+		.exp-bullets li {
+			font-size: 0.9rem;
+			color: var(--ink-60);
+			line-height: 1.65;
+			padding-left: 1.1rem;
+			position: relative;
+		}
+
+		.exp-bullets li::before {
+			content: '–';
+			position: absolute;
+			left: 0;
+			color: var(--teal);
+			font-weight: 700;
+		}
+
+		/* ── PROJECTS ── */
+		.project-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5rem;
+		}
+
+		.proj-card {
+			background: #fff;
+			border: 1px solid var(--ink-10);
+			border-radius: 20px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+		}
+
+		section:nth-child(even) .proj-card {
+			background: var(--paper);
+			border-color: rgba(13, 17, 23, 0.06);
+		}
+
+		.proj-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 20px 48px rgba(13, 17, 23, 0.1);
+		}
+
+		.proj-image {
+			aspect-ratio: 16/9;
+			width: 100%;
+			object-fit: cover;
+			display: block;
+			filter: saturate(0.85);
+			transition: filter 0.3s;
+		}
+
+		.proj-card:hover .proj-image {
+			filter: saturate(1);
+		}
+
+		.proj-body {
+			padding: 1.6rem;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.proj-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.45rem;
+			margin-bottom: 1rem;
+		}
+
+		.proj-category {
+			font-size: 0.68rem;
+			font-weight: 600;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			padding: 0.28rem 0.65rem;
+			border-radius: 999px;
+			background: var(--teal-light);
+			color: var(--teal);
+		}
+
+		.proj-stack-pill {
+			font-size: 0.68rem;
+			font-weight: 500;
+			padding: 0.28rem 0.65rem;
+			border-radius: 999px;
+			background: var(--accent-light);
+			color: var(--accent);
+		}
+
+		.proj-title {
+			font-size: 1.1rem;
+			font-weight: 600;
+			color: var(--ink);
+			line-height: 1.3;
+			margin-bottom: 0.7rem;
+		}
+
+		.proj-summary {
+			font-size: 0.875rem;
+			color: var(--ink-60);
+			line-height: 1.65;
+			margin-bottom: 1rem;
+		}
+
+		.proj-approach {
+			font-size: 0.78rem;
+			font-weight: 600;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: var(--ink);
+			margin-bottom: 0.5rem;
+		}
+
+		.proj-bullets {
+			list-style: none;
+			margin-bottom: 1.1rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.4rem;
+		}
+
+		.proj-bullets li {
+			font-size: 0.835rem;
+			color: var(--ink-60);
+			line-height: 1.6;
+			padding-left: 1rem;
+			position: relative;
+		}
+
+		.proj-bullets li::before {
+			content: '·';
+			position: absolute;
+			left: 0;
+			color: var(--teal);
+			font-size: 1.1rem;
+			line-height: 1.4;
+		}
+
+		.proj-impact {
+			margin-top: auto;
+			padding: 0.9rem 1rem;
+			background: var(--accent-light);
+			border-radius: 10px;
+			font-size: 0.82rem;
+			color: var(--accent);
+			line-height: 1.6;
+			margin-bottom: 1.2rem;
+		}
+
+		.proj-impact strong {
+			color: var(--accent);
+			font-weight: 600;
+		}
+
+		.proj-footer {
+			padding-top: 1rem;
+			border-top: 1px solid var(--ink-10);
+			display: flex;
+			gap: 0.65rem;
+			flex-wrap: wrap;
+		}
+
+		.proj-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.35rem;
+			font-size: 0.8rem;
+			font-weight: 500;
+			color: var(--ink);
+			text-decoration: none;
+			padding: 0.45rem 0.9rem;
+			border-radius: 7px;
+			border: 1px solid var(--ink-30);
+			transition: all 0.18s;
+		}
+
+		.proj-link:hover {
+			background: var(--ink);
+			color: #fff;
+			border-color: var(--ink);
+		}
+
+		.proj-link.primary {
+			background: var(--ink);
+			color: #fff;
+			border-color: var(--ink);
+		}
+
+		.proj-link.primary:hover {
+			background: var(--accent);
+			border-color: var(--accent);
+		}
+
+		/* TBC card */
+		.proj-card.tbc {
+			border-style: dashed;
+			opacity: 0.82;
+		}
+
+		.tbc-placeholder {
+			aspect-ratio: 16/9;
+			width: 100%;
+			background: linear-gradient(135deg, var(--paper-warm), var(--accent-light));
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: var(--serif);
+			font-size: 0.85rem;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: var(--accent-mid);
+		}
+
+		/* ── ROADMAP ── */
+		.roadmap-note {
+			display: flex;
+			align-items: flex-start;
+			gap: 1rem;
+			padding: 1.25rem 1.5rem;
+			background: var(--teal-light);
+			border-left: 3px solid var(--teal);
+			border-radius: 0 10px 10px 0;
+			margin-bottom: 3rem;
+		}
+
+		.roadmap-note p {
+			font-size: 0.9rem;
+			color: var(--teal);
+			line-height: 1.65;
+		}
+
+		/* ── CV ── */
+		#cv {
+			display: grid;
+			grid-template-columns: 1fr 420px;
+			gap: 4rem;
+			align-items: start;
+		}
+
+		.cv-left {}
+
+		.cv-right {
+			position: sticky;
+			top: 3rem;
+		}
+
+		.cv-img-wrap {
+			background: #fff;
+			border: 1px solid var(--ink-10);
+			border-radius: 16px;
+			overflow: hidden;
+			box-shadow: 0 12px 36px rgba(13, 17, 23, 0.08);
+		}
+
+		.cv-img-wrap img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		/* ── CONTACT ── */
+		#contact-inner {
+			max-width: 680px;
+		}
+
+		.contact-headline {
+			font-family: var(--serif);
+			font-size: clamp(1.8rem, 3vw, 2.6rem);
+			font-weight: 700;
+			line-height: 1.15;
+			letter-spacing: -0.02em;
+			color: var(--ink);
+			margin-bottom: 1.1rem;
+		}
+
+		.contact-body {
+			font-size: 1.05rem;
+			color: var(--ink-60);
+			line-height: 1.75;
+			max-width: 560px;
+			margin-bottom: 2.5rem;
+		}
+
+		.contact-links {
+			display: flex;
+			gap: 0.75rem;
+			flex-wrap: wrap;
+		}
+
+		/* ── FOOTER ── */
+		footer {
+			margin-left: 0;
+			padding: 2rem 5rem;
+			background: var(--ink);
+			color: rgba(255, 255, 255, 0.35);
+			font-size: 0.8rem;
+			border-top: 1px solid var(--ink-10);
+		}
+
+		/* ── SCROLL ANIMATE ── */
+		.fade-in {
+			opacity: 0;
+			transform: translateY(24px);
+			transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+		}
+
+		.fade-in.visible {
+			opacity: 1;
+			transform: none;
+		}
+
+		/* ── RESPONSIVE ── */
+		@media (max-width: 1200px) {
+			:root {
+				--nav-w: 240px;
+			}
+
+			#hero {
+				grid-template-columns: 1fr 340px;
+			}
+
+			.capability-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			#cv {
 				grid-template-columns: 1fr;
 			}
+
+			.cv-right {
+				position: static;
+			}
 		}
 
-		@media screen and (max-width: 736px) {
-			#main>section>.container {
-				width: calc(100% - 2rem);
+		@media (max-width: 900px) {
+			:root {
+				--nav-w: 0px;
 			}
 
-			#main>section {
-				padding-top: 3.4rem;
-				padding-bottom: 3.4rem;
+			#sidebar {
+				display: none;
 			}
 
-			.hero-statement {
-				font-size: 1.08em;
+			#hero {
+				grid-template-columns: 1fr;
 			}
 
-			.value-card,
-			.metric-card,
-			.capability-card,
-			.credential-card,
-			.project-card,
-			.panel,
-			.experience-card {
-				padding: 1.15rem;
+			.hero-panel {
+				display: none;
 			}
 
-			.project-card h4 {
-				font-size: 1.22rem;
+			.hero-content {
+				padding: 4rem 2rem 3rem;
+			}
+
+			section {
+				padding: 4rem 2rem;
+			}
+
+			footer {
+				padding: 2rem;
+			}
+
+			.capability-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.project-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.exp-item {
+				grid-template-columns: 1fr;
+				gap: 0.75rem;
+			}
+
+			.exp-meta {
+				display: flex;
+				gap: 1rem;
+				align-items: center;
+				flex-wrap: wrap;
 			}
 		}
 	</style>
 </head>
 
-<body class="is-preload">
+<body>
 
-	<section id="header">
-		<header>
-			<span class="image avatar"><img src="images/me.jpg" alt="Fiona Meisner" /></span>
-			<h1 id="logo"><a href="https://www.linkedin.com/in/fiona-meisner/" target="_blank">Fiona Meisner</a></h1>
-			<p>Data Analyst | Operational Analytics, Risk Insight &amp; Decision Support</p>
-		</header>
+	<!-- ── SIDEBAR ── -->
+	<aside id="sidebar">
+		<div class="sidebar-inner">
+			<img src="images/me.jpg" alt="Fiona Meisner" class="sidebar-avatar" />
+			<div class="sidebar-name">Fiona Meisner</div>
+			<div class="sidebar-role">Data Analyst<br>Operational & Risk Analytics</div>
 
-		<nav id="nav">
-			<ul>
-				<li><a href="#one" class="active">About</a></li>
-				<li><a href="#two">Value</a></li>
-				<li><a href="#experience">Experience</a></li>
-				<li><a href="#three">Projects</a></li>
-				<li><a href="#roadmap">Upcoming Projects</a></li>
-				<li><a href="#four">CV</a></li>
-				<li><a href="#five">Contact</a></li>
-			</ul>
-		</nav>
+			<nav id="nav">
+				<ul>
+					<li><a href="#hero" class="active"><span class="nav-dot"></span>About</a></li>
+					<li><a href="#value"><span class="nav-dot"></span>Value</a></li>
+					<li><a href="#experience"><span class="nav-dot"></span>Experience</a></li>
+					<li><a href="#projects"><span class="nav-dot"></span>Projects</a></li>
+					<li><a href="#roadmap"><span class="nav-dot"></span>Upcoming</a></li>
+					<li><a href="#cv-section"><span class="nav-dot"></span>CV</a></li>
+					<li><a href="#contact"><span class="nav-dot"></span>Contact</a></li>
+				</ul>
+			</nav>
 
-		<footer>
-			<ul class="icons">
-				<li><a href="https://www.kaggle.com/fionameisner" class="icon brands fa-kaggle" target="_blank"><span
-							class="label">Kaggle</span></a></li>
-				<li><a href="https://www.linkedin.com/in/fiona-meisner/" class="icon brands fa-linkedin" target="_blank"><span
-							class="label">LinkedIn</span></a></li>
-				<li><a href="https://github.com/meisnerfiona-it" class="icon brands fa-github" target="_blank"><span
-							class="label">GitHub</span></a></li>
-				<li><a href="mailto:meisnerfiona@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a>
-				</li>
-			</ul>
-		</footer>
-	</section>
-
-	<div id="wrapper">
-		<div id="main">
-
-			<section id="one">
-				<div class="image main" data-position="center">
-					<img src="images/earth.jpg" alt="Portfolio banner" />
-				</div>
-
-				<div class="container">
-					<header class="major">
-						<span class="intro-tagline">Data Analyst Portfolio</span>
-						<h2>Turning Data Into Decisions That Matter</h2>
-					</header>
-
-					<p class="hero-statement">
-						<strong>Data Analyst specializing in turning operational, customer, and risk data into decision frameworks that improve performance, 
-							reduce inefficiencies, and strengthen business visibility in production environments..</strong>
-					</p>
-
-					<p>
-						I bring 3+ years of experience working in business-critical cloud environments, where I’ve worked directly
-						with live production systems, monitoring data, governance reporting, and cross-functional stakeholders. That
-						background gives me a practical understanding of how data behaves in real systems and how it should be used
-						to support action, not just reporting.
-					</p>
-
-					<p>
-						My work sits at the intersection of analytics, operations, and business strategy. Using SQL, Python, Power
-						BI, Tableau, Excel, APIs, and dashboarding tools, I build analysis and reporting that clarify priorities,
-						reveal risk, and support stronger decisions.
-					</p>
-
-					<p>
-						I’m particularly well suited to roles where data is operationally important, commercially relevant, and tied
-						to measurable business outcomes across performance, compliance, customer experience, or process improvement.
-					</p>
-
-					<div class="highlight-strip">
-						Positioning: Decision-focused analytics driving performance,
-						risk visibility, and operational efficiency in business-critical environments.
-					</div>
-
-					<div class="value-grid">
-						<div class="value-card">
-							<h4>Operational Depth</h4>
-							<p>Experience with live systems, production monitoring, and real operational environments where data
-								quality
-								and timing matter.</p>
-						</div>
-						<div class="value-card">
-							<h4>Commercial Thinking</h4>
-							<p>Strong focus on business trade-offs, measurable value, and analysis that supports prioritisation and
-								decision-making.</p>
-						</div>
-						<div class="value-card">
-							<h4>Executive Communication</h4>
-							<p>Comfortable translating technical findings into clear reporting, stakeholder-ready summaries, and
-								decision
-								narratives.</p>
-						</div>
-					</div>
-
-					<div class="metrics-row">
-						<div class="metric-card">
-							<span class="number">3+ Years</span>
-							<span class="label">Business-critical cloud and operational environments</span>
-						</div>
-						<div class="metric-card">
-							<span class="number">SQL + Python</span>
-							<span class="label">Core analytical workflow and data problem solving</span>
-						</div>
-						<div class="metric-card">
-							<span class="number">Risk + Ops</span>
-							<span class="label">Commercially relevant analytics focus</span>
-						</div>
-						<div class="metric-card">
-							<span class="number">Decision-Ready</span>
-							<span class="label">Reporting built for action, not noise</span>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="two">
-				<div class="container">
-					<h3>How I Create Business Value</h3>
-					<p class="section-lead">
-						I design and deliver analytical solutions that directly support decision-making, improve operational
-						visibility, and reduce uncertainty across complex environments.
-					</p>
-
-					<div class="capability-grid">
-						<div class="capability-card">
-							<span class="capability-label">Decision Support</span>
-							<h4>Data Analysis &amp; Insight Generation</h4>
-							<p><strong>Tools:</strong> SQL, Python, Excel</p>
-							<p>Structure and analyse complex datasets to identify trends, anomalies, and performance drivers—turning
-								raw data into clear business recommendations.</p>
-						</div>
-
-						<div class="capability-card">
-							<span class="capability-label">Performance</span>
-							<h4>Experimentation &amp; Product Analytics</h4>
-							<p><strong>Focus:</strong> A/B Testing, KPI Tracking, Funnel Analysis</p>
-							<p>Evaluate changes through data, identifying what drives conversion, engagement, adoption, and
-								efficiency.
-							</p>
-						</div>
-
-						<div class="capability-card">
-							<span class="capability-label">Visibility</span>
-							<h4>Dashboarding &amp; Executive Reporting</h4>
-							<p><strong>Tools:</strong> Power BI, Tableau, Grafana</p>
-							<p>Build reporting layers that improve stakeholder visibility, accelerate decisions, and create trust in
-								the
-								numbers.</p>
-						</div>
-
-						<div class="capability-card">
-							<span class="capability-label">Data Systems</span>
-							<h4>Data Integration &amp; Transformation</h4>
-							<p><strong>Tools:</strong> APIs, Python, Data Cleaning</p>
-							<p>Combine and transform multi-source data into structured, analysis-ready datasets for reporting,
-								modeling,
-								and exploration.</p>
-						</div>
-
-						<div class="capability-card">
-							<span class="capability-label">Risk &amp; Ops</span>
-							<h4>Operational &amp; Risk Analytics</h4>
-							<p><strong>Domains:</strong> Operations, Governance, Compliance, Customer Experience</p>
-							<p>Apply analysis to operational performance, control visibility, governance reporting, and business risk
-								reduction.</p>
-						</div>
-
-						<div class="capability-card">
-							<span class="capability-label">Real Environments</span>
-							<h4>Production Data Experience</h4>
-							<p><strong>Background:</strong> Cloud Operations</p>
-							<p>Understand how systems behave in live environments and how to use monitoring, reporting, and structured
-								communication to support stability and performance.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="experience">
-				<div class="container">
-					<h3>Professional Experience</h3>
-					<p class="section-lead">
-						Experience working with live systems, operational reporting, governance visibility, and stakeholder-focused
-						decision support in business-critical environments.
-					</p>
-
-					<div class="experience-grid">
-						<div class="experience-card">
-							<span class="experience-tag">Current Role</span>
-							<h4>Cloud Operations Analyst — Aer Lingus</h4>
-							<p><strong>Focus:</strong> Production monitoring, operational analytics, governance visibility, risk
-								reporting</p>
-							<ul>
-								<li>Designed and improved Grafana dashboards for cloud system performance, enabling earlier visibility
-									into anomalies and operational risk.</li>
-								<li>Worked with governance and risk-related data to support audit readiness, reporting accuracy, and
-									control visibility across teams.</li>
-								<li>Translated technical monitoring data into structured reporting for engineering, security, and
-									operations stakeholders.</li>
-								<li>Strengthened visibility into live system performance through practical analytics and reporting
-									workflows.</li>
-							</ul>
-						</div>
-
-						<div class="experience-card">
-							<span class="experience-tag">Previous Role</span>
-							<h4>Business Support Analyst — Aer Lingus</h4>
-							<p><strong>Focus:</strong> Release support, operational coordination, workflow visibility, stakeholder
-								communication</p>
-							<ul>
-								<li>Supported production and non-production releases, identifying blockers early to reduce disruption
-									and
-									improve delivery confidence.</li>
-								<li>Improved team workflow visibility through structured use of Jira, Confluence, and dashboard-based
-									reporting.</li>
-								<li>Communicated technical issues and findings through clear documentation and stakeholder-ready
-									updates.
-								</li>
-								<li>Built a stronger operational foundation for reporting, coordination, and cross-team clarity.</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="panel" style="margin-top: 1.5rem;">
-						<span class="panel-tag">Why This Matters</span>
-						<p>
-							This background strengthens my analytics profile because it combines live production exposure with
-							dashboard
-							reporting, risk visibility, cross-functional communication, and practical understanding of how data
-							supports real decisions in operational settings.
-						</p>
-					</div>
-				</div>
-			</section>
-
-			<section id="three">
-				<div class="container">
-					<h3>Featured Projects</h3>
-					<p class="section-lead">
-						Selected projects across macroeconomic analysis, risk intelligence, fraud analytics, and predictive
-						modeling—designed to demonstrate structured thinking, commercial relevance, and decision-focused
-						storytelling.
-					</p>
-
-					<div class="highlight-strip">
-						These case studies are presented as business problems, not just technical exercises—focusing on decisions,
-						trade-offs, and measurable impact.
-					</div>
-
-					<div class="project-showcase">
-
-						<article class="project-card">
-							<a href="https://github.com/meisnerfiona-it/economic-impact-of-green-deal" class="project-thumb"
-								target="_blank">
-								<img src="images/Green_deal_unsplash.jpg" alt="European energy shock analysis project preview" />
-							</a>
-
-							<div class="project-meta">
-								<span class="project-tag">Macroeconomic Analytics</span>
-								<span class="project-stack">Python • APIs • Regression</span>
-							</div>
-
-							<h4>Energy Price Shock & Inflation Transmission Across European Economies</h4>
-
-							<p class="project-summary">
-								Quantified how energy price shocks translate into inflation across major EU economies, 
-								enabling clearer risk assessment and policy response under volatile market conditions.
-							</p>
-
-							<div class="project-section-title">Approach</div>
-							<ul class="project-bullets">
-							<li>Engineered a harmonized, multi-country time series dataset from Eurostat and ECB APIs, resolving frequency
-								mismatches, missing data, and structural inconsistencies.</li>
-							<li>Developed a clean analytical pipeline to align inflation (HICP) with energy price indices across Germany, France,
-								Italy, and Spain.</li>
-							<li>Quantified the strength and timing of energy-to-inflation transmission using correlation and regression analysis,
-								isolating effects such as the 2021–2022 energy shock.</li>
-							<li>Segmented analysis across macroeconomic regimes (pre-Green Deal and energy crisis) to evaluate shifts in
-								inflation dynamics and persistence.</li>
-							<li>Benchmarked cross-country volatility and resilience, identifying Italy as highly reactive to shocks and France as
-								comparatively stable.</li>
-							</ul>
-
-							<div class="project-impact">
-								<strong>Business impact:</strong> Translates complex macroeconomic data into actionable insight—highlighting how energy-driven inflation risk varies
-								across economies, enabling more informed policy evaluation, market analysis, and strategic decision-making under
-								volatile conditions.
-							</div>
-
-							<div class="project-footer">
-								<div class="project-links">
-									<a href="https://github.com/meisnerfiona-it/economic-impact-of-green-deal" target="_blank">View
-										Project</a>
-								</div>
-							</div>
-						</article>
-
-
-
-
-
-						<article class="project-card">
-							<a href="#" class="project-thumb" target="_blank">
-								<img src="images/bank.jpg" alt="UK regional risk intelligence project preview" />
-							</a>
-
-							<div class="project-meta">
-								<span class="project-tag">Risk Intelligence</span>
-								<span class="project-stack">Python • APIs • Mapping</span>
-							</div>
-
-							<h4>UK Regional Risk Intelligence: Crime and Weather Signal Mapping</h4>
-
-							<p class="project-summary">
-								Combined public crime and environmental data to identify regional risk concentration patterns and show
-								how multi-source analysis can support planning decisions.
-							</p>
-
-							<div class="project-section-title">Approach</div>
-							<ul class="project-bullets">
-								<li>Engineered a unified dataset from UK public crime and weather sources, resolving geographic inconsistencies and
-									missing data using Pandas.</li>
-								<li>Designed a region-level risk scoring framework combining crime frequency and environmental conditions.</li>
-								<li>Performed exploratory and comparative analysis to identify high-risk clusters and temporal patterns.</li>
-								<li>Developed clear visual outputs (Matplotlib) to communicate risk concentration and support prioritisation
-									decisions.</li>
-								<li>Structured the project workflow using Kanban to simulate real-world analytical delivery.</li>
-							</ul>
-
-							<div class="project-impact">
-								<strong>Business impact:</strong> Shows how integrated risk signals can improve visibility, prioritise
-								resources, and support evidence-based regional planning.
-							</div>
-
-							<div class="project-footer">
-								<div class="project-links">
-									<a href="https://github.com/meisnerfiona-it/uk_regional_risk_intelligence" target="_blank">View
-										Project</a>
-							</div>
-						</article>
-
-						<article class="project-card">
-							<a href="#" class="project-thumb" target="_blank">
-								<img src="images/House.jpg" alt="Credit card fraud detection project preview" />
-							</a>
-
-							<div class="project-meta">
-								<span class="project-tag">Fraud Analytics</span>
-								<span class="project-stack">Python • Classification • Risk Analysis</span>
-							</div>
-
-							<h4>Residential Property Valuation Modeling</h4>
-
-							<p class="project-summary">
-								This project builds a machine learning pipeline for residential property valuation using structured preprocessing,
-								feature engineering, and gradient boosting. The objective is to improve pricing accuracy and demonstrate how predictive analytics can support valuation, lending,
-								and market intelligence decisions.
-
-							</p>
-
-							<div class="project-section-title">Approach</div>
-							<ul class="project-bullets">
-								<li>Cleaned and prepared housing data with robust missing-value handling for categorical and numerical features.</li>
-								<li>Engineered features such as total square footage, porch area, weighted bathroom count, and usable outdoor space.
-								</li>
-								<li>Applied one-hot encoding and aligned train/test datasets to preserve a consistent modeling structure.</li>
-								<li>Trained an XGBoost regressor with early stopping and evaluated performance using RMSE on log-transformed prices.
-								</li>
-							</ul>
-
-						<div class="project-impact">
-							<strong>Business impact:</strong> Demonstrates how predictive modeling can support more consistent property valuation,
-							stronger pricing decisions, and improved analytical workflows in real estate or lending contexts.
-						</div>
-
-							<div class="project-footer">
-								<div class="project-links">
-									<a href="https://github.com/meisnerfiona-it/House-Prices-Project-" target="_blank">View Project</a>
-								</div>
-							</div>
-							</article>
-
-				<article class="project-card">
-	<a href="#" class="project-thumb" target="_blank">
-		<img src="images/Flight.jpg" alt="Flight delay risk prediction project preview" />
-	</a>
-
-	<div class="project-meta">
-		<span class="project-tag">Operational Analytics</span>
-		<span class="project-stack">Python • ML • Operational Analytics</span>
-	</div>
-
-	<h4>Flight Delay Risk Prediction & Operational Decision System</h4>
-
-	<p class="project-summary">
-		Built a predictive decision-support project using historical flight operations data to identify delay risk, explain disruption drivers, and support proactive scheduling and resource allocation.
-	</p>
-
-	<div class="project-section-title">Approach</div>
-	<ul class="project-bullets">
-		<li>Engineered a structured dataset from historical flight delay records, preparing time-based and operational features for reliable analysis.</li>
-		<li>Performed exploratory analysis to uncover the main drivers of disruption, including carrier behaviour, route concentration, airport congestion, and departure timing.</li>
-		<li>Developed a predictive model to estimate delay likelihood and identify higher-risk operational scenarios.</li>
-		<li>Created a decision-support framework that translated model outputs into actionable recommendations such as schedule buffering, targeted monitoring, and resource prioritisation.</li>
-		<li>Designed clear visual outputs to communicate risk hotspots, performance patterns, and operational recommendations to non-technical stakeholders.</li>
-	</ul>
-
-	<div class="project-impact">
-		<strong>Business impact:</strong> Shows how operational data can be transformed into early-warning insight, helping reduce disruption exposure, improve planning efficiency, and support better allocation of operational resources.
-	</div>
-
-	<div class="project-footer">
-		<div class="project-links">
-			<a href="https://github.com/meisnerfiona-it/your-flight-delay-project" target="_blank">View Project</a>
+			<div class="sidebar-socials">
+				<a href="https://www.kaggle.com/fionameisner" target="_blank">Kaggle</a>
+				<a href="https://www.linkedin.com/in/fiona-meisner/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/meisnerfiona-it" target="_blank">GitHub</a>
+			</div>
 		</div>
-	</div>
-</article>
+	</aside>
 
+	<!-- ── MAIN ── -->
+	<main id="main">
 
-						
+		<!-- HERO -->
+		<section id="hero" style="border-top: none; padding: 0;">
+			<div class="hero-content">
+				<div class="hero-eyebrow">Data Analyst Portfolio</div>
+				<h1 class="hero-headline">
+					Turning operational<br><em>data into decisions</em><br>that matter.
+				</h1>
+				<p class="hero-body">
+					3+ years working in business-critical cloud environments — production systems, governance reporting, risk
+					visibility, and cross-functional decision support. I build analysis that clarifies priorities and drives
+					action.
+				</p>
+				<div class="hero-tags">
+					<span class="tag tag-navy">Operational Analytics</span>
+					<span class="tag tag-teal">Risk Intelligence</span>
+					<span class="tag tag-ink">SQL &amp; Python</span>
+					<span class="tag tag-navy">Power BI · Tableau</span>
+					<span class="tag tag-teal">Decision-Ready Reporting</span>
+				</div>
+				<div class="hero-actions">
+					<a href="#projects" class="btn btn-primary">View Projects</a>
+					<a href="mailto:meisnerfiona@gmail.com" class="btn btn-ghost">Get in Touch</a>
+				</div>
+			</div>
 
-
-
+			<div class="hero-panel">
+				<img src="images/me.jpg" alt="Fiona Meisner" class="hero-panel-photo" />
+				<div class="stat-row">
+					<div class="stat-cell">
+						<span class="stat-number">3+</span>
+						<span class="stat-label">Years in production environments</span>
+					</div>
+					<div class="stat-cell">
+						<span class="stat-number">SQL</span>
+						<span class="stat-label">+ Python core workflow</span>
+					</div>
+					<div class="stat-cell">
+						<span class="stat-number">5+</span>
+						<span class="stat-label">Portfolio case studies</span>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<section id="roadmap">
-				<div class="container">
-					<h3>TBC Projects</h3>
-					<p class="section-lead">
-						These are upcoming case studies I am actively developing to deepen my expertise across product analytics,
-						experimentation, financial modeling, forecasting, and analytics engineering.
+		<!-- VALUE -->
+		<section id="value">
+			<div class="section-label">How I Create Value</div>
+			<h2 class="section-title">Capabilities &amp; Expertise</h2>
+			<p class="section-intro">
+				I design and deliver analytical solutions that directly support decision-making, improve operational visibility,
+				and reduce uncertainty across complex environments.
+			</p>
 
-						Each project is designed to reflect real world business problems and senior level decision-making.
-
-						I update this section regularly as new work progresses.
-					</p>
-
-					<div class="project-showcase">
-
-
-
-
-
-
-<article class="project-card tbc-card">
-	<a href="#" class="project-thumb" target="_blank">
-		<img src="images/night.jpg" alt="Revenue optimization and customer segmentation project preview" />
-	</a>
-
-	<div class="project-meta">
-		<span class="project-tag">Revenue Analytics</span>
-		<span class="project-stack">SQL • Python • Segmentation • EDA</span>
-	</div>
-
-	<h4>Upcoming: Revenue Optimization & Customer Segmentation Case Study</h4>
-
-	<p class="project-summary">
-		Analyze online retail transactions to identify which customers, products, and purchasing patterns drive the majority
-		of revenue, then translate those findings into recommendations for retention, segmentation, and commercial growth.
-	</p>
-
-	<div class="project-section-title">What I’m exploring</div>
-	<ul class="project-bullets">
-		<li>Which customer segments generate the highest share of revenue.</li>
-		<li>How purchase frequency and basket behavior relate to customer value.</li>
-		<li>Which product patterns reveal the strongest commercial opportunities.</li>
-	</ul>
-
-	<div class="project-section-title">Why this matters</div>
-	<ul class="project-bullets">
-		<li>Demonstrates real-world SQL and business analysis capability using transaction data.</li>
-		<li>Shows how data can support revenue strategy, retention, and customer decision-making.</li>
-		<li>Adds a commercially relevant, insight-led case study to the portfolio.</li>
-	</ul>
-
-	<div class="project-impact">
-		<strong>What this proves:</strong> I can structure business questions, analyze messy transactional data,
-		and turn findings into clear recommendations that support decision-making.
-	</div>
-</article>
-
-<article class="project-card tbc-card">
-	<a href="#" class="project-thumb" target="_blank">
-		<img src="images/Case.jpg" alt="Demand forecasting and capacity planning project preview" />
-	</a>
-
-	<div class="project-meta">
-		<span class="project-tag">Forecasting</span>
-		<span class="project-stack">Python • Time Series • Business Planning</span>
-	</div>
-
-	<h4>Upcoming: Demand Forecasting & Capacity Planning Case Study</h4>
-
-	<p class="project-summary">
-		Build a forecasting case study that predicts future demand patterns and translates those projections into practical
-		recommendations for staffing, inventory, and operational planning.
-	</p>
-
-	<div class="project-section-title">What I’m exploring</div>
-	<ul class="project-bullets">
-		<li>How demand changes over time across different periods, products, or segments.</li>
-		<li>Which trends and seasonal patterns most affect operational planning.</li>
-		<li>How forecast outputs can support better staffing, stock, and service decisions.</li>
-	</ul>
-
-	<div class="project-section-title">Why this matters</div>
-	<ul class="project-bullets">
-		<li>Shows how predictive analysis can support real business planning rather than standalone modeling.</li>
-		<li>Demonstrates the ability to connect forecasts to cost, service quality, and operational efficiency.</li>
-		<li>Strengthens the portfolio with work relevant to retail, logistics, operations, and planning-focused roles.</li>
-	</ul>
-
-	<div class="project-impact">
-		<strong>What this proves:</strong> I can move from forecasting output to business action by translating analytical
-		results into practical recommendations that support planning and performance.
-	</div>
-</article>
-
+			<div class="capability-grid fade-in">
+				<div class="cap-card">
+					<div class="cap-icon">📊</div>
+					<div class="cap-label">Decision Support</div>
+					<div class="cap-title">Data Analysis &amp; Insight Generation</div>
+					<div class="cap-body">Structure and analyse complex datasets to identify trends, anomalies, and performance
+						drivers — turning raw data into clear business recommendations.</div>
+					<div class="cap-tools">
+						<span class="tool-pill">SQL</span>
+						<span class="tool-pill">Python</span>
+						<span class="tool-pill">Excel</span>
 					</div>
+				</div>
 
-					<div class="panel" style="margin-top: 1.5rem;">
-						<span class="panel-tag">My Approach</span>
-						<p>
-							I’m building this portfolio with the expectation of operating at a high level. Each project is designed to strengthen not only technical execution, but the ability to think critically, solve meaningful business problems, and deliver work with real impact.
-							Every case study reflects that standard, guided by clarity, rigor, and strong decision-making.
-					</p>
-						<p>
-							I’m open to tackling real-world challenges. If there’s a problem worth solving, I’m willing to take it on and demonstrate how I think, execute, and deliver at the level high-value roles demand.
+				<div class="cap-card">
+					<div class="cap-icon">🧪</div>
+					<div class="cap-label">Performance</div>
+					<div class="cap-title">Experimentation &amp; Product Analytics</div>
+					<div class="cap-body">Evaluate changes through data — identifying what drives conversion, engagement,
+						adoption, and efficiency across product and operational surfaces.</div>
+					<div class="cap-tools">
+						<span class="tool-pill">A/B Testing</span>
+						<span class="tool-pill">KPI Tracking</span>
+						<span class="tool-pill">Funnel Analysis</span>
+					</div>
+				</div>
 
-						</p>
+				<div class="cap-card">
+					<div class="cap-icon">📈</div>
+					<div class="cap-label">Visibility</div>
+					<div class="cap-title">Dashboarding &amp; Executive Reporting</div>
+					<div class="cap-body">Build reporting layers that improve stakeholder visibility, accelerate decisions, and
+						create trust in the numbers at every level of the business.</div>
+					<div class="cap-tools">
+						<span class="tool-pill">Power BI</span>
+						<span class="tool-pill">Tableau</span>
+						<span class="tool-pill">Grafana</span>
+					</div>
+				</div>
+
+				<div class="cap-card">
+					<div class="cap-icon">🔗</div>
+					<div class="cap-label">Data Systems</div>
+					<div class="cap-title">Data Integration &amp; Transformation</div>
+					<div class="cap-body">Combine and transform multi-source data into structured, analysis-ready datasets for
+						reporting, modelling, and exploration across the business.</div>
+					<div class="cap-tools">
+						<span class="tool-pill">APIs</span>
+						<span class="tool-pill">Python</span>
+						<span class="tool-pill">Data Cleaning</span>
+					</div>
+				</div>
+
+				<div class="cap-card">
+					<div class="cap-icon">🛡️</div>
+					<div class="cap-label">Risk &amp; Ops</div>
+					<div class="cap-title">Operational &amp; Risk Analytics</div>
+					<div class="cap-body">Apply analysis to operational performance, control visibility, governance reporting, and
+						business risk reduction across complex environments.</div>
+					<div class="cap-tools">
+						<span class="tool-pill">Operations</span>
+						<span class="tool-pill">Governance</span>
+						<span class="tool-pill">Compliance</span>
+					</div>
+				</div>
+
+				<div class="cap-card">
+					<div class="cap-icon">⚙️</div>
+					<div class="cap-label">Real Environments</div>
+					<div class="cap-title">Production Data Experience</div>
+					<div class="cap-body">Understand how systems behave in live environments and how to use monitoring, reporting,
+						and structured communication to support stability and performance.</div>
+					<div class="cap-tools">
+						<span class="tool-pill">Cloud Ops</span>
+						<span class="tool-pill">Monitoring</span>
+						<span class="tool-pill">Incident Reporting</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- EXPERIENCE -->
+		<section id="experience">
+			<div class="section-label">Professional Experience</div>
+			<h2 class="section-title">Where I've Worked</h2>
+			<p class="section-intro">
+				Experience working with live systems, operational reporting, governance visibility, and stakeholder-focused
+				decision support in business-critical environments.
+			</p>
+
+			<div class="exp-list fade-in">
+				<div class="exp-item">
+					<div class="exp-meta">
+						<div class="exp-period">Current</div>
+						<div class="exp-badge current">Active</div>
+					</div>
+					<div>
+						<div class="exp-role">Cloud Operations Analyst</div>
+						<div class="exp-company">Aer Lingus</div>
+						<ul class="exp-bullets">
+							<li>Designed and improved Grafana dashboards for cloud system performance, enabling earlier visibility
+								into anomalies and operational risk.</li>
+							<li>Worked with governance and risk-related data to support audit readiness, reporting accuracy, and
+								control visibility across teams.</li>
+							<li>Translated technical monitoring data into structured reporting for engineering, security, and
+								operations stakeholders.</li>
+							<li>Strengthened visibility into live system performance through practical analytics and reporting
+								workflows.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="exp-item">
+					<div class="exp-meta">
+						<div class="exp-period">Previous</div>
+						<div class="exp-badge">Prior Role</div>
+					</div>
+					<div>
+						<div class="exp-role">Business Support Analyst</div>
+						<div class="exp-company">Aer Lingus</div>
+						<ul class="exp-bullets">
+							<li>Supported production and non-production releases, identifying blockers early to reduce disruption and
+								improve delivery confidence.</li>
+							<li>Improved team workflow visibility through structured use of Jira, Confluence, and dashboard-based
+								reporting.</li>
+							<li>Communicated technical issues and findings through clear documentation and stakeholder-ready updates.
+							</li>
+							<li>Built a stronger operational foundation for reporting, coordination, and cross-team clarity.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- PROJECTS -->
+		<section id="projects">
+			<div class="section-label">Featured Work</div>
+			<h2 class="section-title">Portfolio Projects</h2>
+			<p class="section-intro">
+				Selected case studies across macroeconomic analysis, risk intelligence, predictive modelling, and business
+				intelligence — presented as business problems, not just technical exercises.
+			</p>
+
+			<div class="project-grid fade-in">
+
+				<article class="proj-card">
+					<img src="images/Green_deal_unsplash.jpg" alt="European energy shock analysis" class="proj-image" />
+					<div class="proj-body">
+						<div class="proj-tags">
+							<span class="proj-category">Macroeconomic Analytics</span>
+							<span class="proj-stack-pill">Python · APIs · Regression</span>
 						</div>
-				</div>
-			</section>
+						<h3 class="proj-title">Energy Price Shock &amp; Inflation Transmission Across European Economies</h3>
+						<p class="proj-summary">Quantified how energy price shocks translate into inflation across major EU
+							economies, enabling clearer risk assessment and policy response under volatile market conditions.</p>
+						<div class="proj-approach">Approach</div>
+						<ul class="proj-bullets">
+							<li>Engineered a harmonized multi-country time series dataset from Eurostat and ECB APIs, resolving
+								frequency mismatches and structural inconsistencies.</li>
+							<li>Quantified energy-to-inflation transmission using correlation and regression analysis, isolating
+								effects across the 2021–2022 energy shock.</li>
+							<li>Benchmarked cross-country volatility — identifying Italy as highly reactive and France as
+								comparatively stable.</li>
+						</ul>
+						<div class="proj-impact"><strong>Business impact:</strong> Translates complex macroeconomic data into
+							actionable insight, enabling more informed policy evaluation and strategic decision-making under volatile
+							conditions.</div>
+						<div class="proj-footer">
+							<a href="https://github.com/meisnerfiona-it/economic-impact-of-green-deal" target="_blank"
+								class="proj-link primary">View on GitHub ↗</a>
+						</div>
+					</div>
+				</article>
 
-		<section id="four">
-			<div class="container">
-				<h3 style="text-align: center; margin-bottom: 1rem;">Professional Background</h3>
+				<article class="proj-card">
+					<img src="images/bank.jpg" alt="UK regional risk intelligence" class="proj-image" />
+					<div class="proj-body">
+						<div class="proj-tags">
+							<span class="proj-category">Risk Intelligence</span>
+							<span class="proj-stack-pill">Python · APIs · Mapping</span>
+						</div>
+						<h3 class="proj-title">UK Regional Risk Intelligence: Crime &amp; Weather Signal Mapping</h3>
+						<p class="proj-summary">Combined public crime and environmental data to identify regional risk concentration
+							patterns and demonstrate how multi-source analysis can support planning decisions.</p>
+						<div class="proj-approach">Approach</div>
+						<ul class="proj-bullets">
+							<li>Engineered a unified dataset from UK public crime and weather sources, resolving geographic
+								inconsistencies using Pandas.</li>
+							<li>Designed a region-level risk scoring framework combining crime frequency and environmental conditions.
+							</li>
+							<li>Developed clear visual outputs to communicate risk concentration and support prioritisation decisions.
+							</li>
+						</ul>
+						<div class="proj-impact"><strong>Business impact:</strong> Shows how integrated risk signals can improve
+							visibility, prioritise resources, and support evidence-based regional planning.</div>
+						<div class="proj-footer">
+							<a href="https://github.com/meisnerfiona-it/uk_regional_risk_intelligence" target="_blank"
+								class="proj-link primary">View on GitHub ↗</a>
+						</div>
+					</div>
+				</article>
 
-				<div class="panel" style="text-align: center; padding: 2.75rem 2rem; background: #fafafa; border-radius: 14px;">
+				<article class="proj-card">
+					<img src="images/House.jpg" alt="Property valuation modelling" class="proj-image" />
+					<div class="proj-body">
+						<div class="proj-tags">
+							<span class="proj-category">Predictive Modelling</span>
+							<span class="proj-stack-pill">Python · XGBoost · Feature Engineering</span>
+						</div>
+						<h3 class="proj-title">Residential Property Valuation Modelling</h3>
+						<p class="proj-summary">Built a machine learning pipeline for residential property valuation using
+							structured preprocessing, feature engineering, and gradient boosting to improve pricing accuracy.</p>
+						<div class="proj-approach">Approach</div>
+						<ul class="proj-bullets">
+							<li>Cleaned housing data with robust missing-value handling across categorical and numerical features.
+							</li>
+							<li>Engineered features including total square footage, weighted bathroom count, and usable outdoor space.
+							</li>
+							<li>Trained an XGBoost regressor with early stopping; evaluated performance using RMSE on log-transformed
+								prices.</li>
+						</ul>
+						<div class="proj-impact"><strong>Business impact:</strong> Demonstrates how predictive modelling supports
+							consistent property valuation and stronger pricing decisions in real estate or lending contexts.</div>
+						<div class="proj-footer">
+							<a href="https://github.com/meisnerfiona-it/House-Prices-Project-" target="_blank"
+								class="proj-link primary">View on GitHub ↗</a>
+						</div>
+					</div>
+				</article>
 
-					<span class="panel-tag">CV Preview</span>
+				<article class="proj-card">
+					<img src="images/Flight.jpg" alt="Flight delay risk prediction" class="proj-image" />
+					<div class="proj-body">
+						<div class="proj-tags">
+							<span class="proj-category">Operational Analytics</span>
+							<span class="proj-stack-pill">Python · ML · Decision Support</span>
+						</div>
+						<h3 class="proj-title">Flight Delay Risk Prediction &amp; Operational Decision System</h3>
+						<p class="proj-summary">Built a predictive decision-support tool using historical flight operations data to
+							identify delay risk, explain disruption drivers, and support proactive scheduling and resource allocation.
+						</p>
+						<div class="proj-approach">Approach</div>
+						<ul class="proj-bullets">
+							<li>Performed exploratory analysis uncovering main disruption drivers: carrier behaviour, route
+								concentration, airport congestion, and departure timing.</li>
+							<li>Developed a predictive model to estimate delay likelihood and identify higher-risk operational
+								scenarios.</li>
+							<li>Created a decision-support framework translating model outputs into schedule buffering and resource
+								prioritisation recommendations.</li>
+						</ul>
+						<div class="proj-impact"><strong>Business impact:</strong> Transforms operational data into early-warning
+							insight, helping reduce disruption exposure and improve planning efficiency.</div>
+						<div class="proj-footer">
+							<a href="https://github.com/meisnerfiona-it/flight-delay-risk-prediction" target="_blank"
+								class="proj-link primary">View on GitHub ↗</a>
+						</div>
+					</div>
+				</article>
 
-					<p style="max-width: 720px; margin: 0.85rem auto 2.2rem; line-height: 1.7;">
+
+			</div>
+		</section>
+
+		<!-- ROADMAP -->
+		<section id="roadmap">
+			<div class="section-label">In Progress</div>
+			<h2 class="section-title">Upcoming Projects</h2>
+			<p class="section-intro">
+				Case studies I'm actively developing to deepen expertise across product analytics, experimentation, financial
+				modelling, and forecasting.
+			</p>
+
+			<div class="roadmap-note">
+				<p>Each upcoming project is designed to reflect real-world business problems and senior-level decision-making. I
+					update this section regularly as new work progresses.</p>
+			</div>
+
+			<div class="project-grid fade-in">
+
+					<article class="proj-card">
+						<img src="images/visual.jpg" alt="Supply chain Tableau dashboard" class="proj-image" />
+						<div class="proj-body">
+							<div class="proj-tags">
+								<span class="proj-category">Business Intelligence</span>
+								<span class="proj-stack-pill">SQL · Python · Tableau</span>
+							</div>
+							<h3 class="proj-title">Profit Leakage &amp; Supply Chain Efficiency Dashboard</h3>
+							<p class="proj-summary">Built an executive BI dashboard identifying hidden profit leakage across sales,
+								discounts, returns, and shipping performance — enabling clearer operational and profitability decisions.
+							</p>
+							<div class="proj-approach">Approach</div>
+							<ul class="proj-bullets">
+								<li>Cleaned and transformed raw retail supply chain data using SQL, standardizing order, product, region,
+									and profitability fields.</li>
+								<li>Used Python to analyse discount-profit relationships, detect low-margin product groups, and forecast
+									short-term sales trends.</li>
+								<li>Built a Tableau executive dashboard covering CEO overview, regional performance, product
+									profitability, and supply chain risk.</li>
+							</ul>
+							<div class="proj-impact"><strong>Business impact:</strong> Identifies where profit is lost despite revenue
+								activity — helping leaders prioritize discount control, product rationalisation, and supply chain
+								efficiency.</div>
+
+						</div>
+					</article>
+
+
+
+
+
+				<article class="proj-card tbc">
+					<div class="tbc-placeholder">Coming Soon</div>
+					<div class="proj-body">
+						<div class="proj-tags">
+							<span class="proj-category">Revenue Analytics</span>
+							<span class="proj-stack-pill">SQL · Python · Segmentation</span>
+						</div>
+						<h3 class="proj-title">Revenue Optimization &amp; Customer Segmentation</h3>
+						<p class="proj-summary">Analyze online retail transactions to identify which customers, products, and
+							purchasing patterns drive the majority of revenue — translating findings into retention and commercial
+							growth recommendations.</p>
+						<div class="proj-approach">Exploring</div>
+						<ul class="proj-bullets">
+							<li>Which customer segments generate the highest share of revenue.</li>
+							<li>How purchase frequency and basket behaviour relate to customer value.</li>
+							<li>Which product patterns reveal the strongest commercial opportunities.</li>
+						</ul>
+						<div class="proj-impact"><strong>What this proves:</strong> I can structure business questions, analyse
+							messy transactional data, and turn findings into clear recommendations that support decision-making.</div>
+					</div>
+				</article>
+
+				<article class="proj-card tbc">
+					<div class="tbc-placeholder">Coming Soon</div>
+					<div class="proj-body">
+						<div class="proj-tags">
+							<span class="proj-category">Forecasting</span>
+							<span class="proj-stack-pill">Python · Time Series · Planning</span>
+						</div>
+						<h3 class="proj-title">Demand Forecasting &amp; Capacity Planning</h3>
+						<p class="proj-summary">Build a forecasting case study that predicts future demand patterns and translates
+							projections into practical recommendations for staffing, inventory, and operational planning.</p>
+						<div class="proj-approach">Exploring</div>
+						<ul class="proj-bullets">
+							<li>How demand changes over time across different periods, products, or segments.</li>
+							<li>Which trends and seasonal patterns most affect operational planning.</li>
+							<li>How forecast outputs can support better staffing, stock, and service decisions.</li>
+						</ul>
+						<div class="proj-impact"><strong>What this proves:</strong> I can move from forecasting output to business
+							action — translating analytical results into practical recommendations that support planning and
+							performance.</div>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<!-- CV -->
+		<section id="cv-section">
+			<div id="cv">
+				<div class="cv-left">
+					<div class="section-label">Professional Background</div>
+					<h2 class="section-title">CV Overview</h2>
+					<p class="section-intro">
 						A concise overview of my experience across cloud operations, production monitoring, governance support,
 						reporting, and analytical project work.
 					</p>
-
-					<div class="cv-preview-card" style="display: flex; justify-content: center; align-items: center;">
-						<div style="
-							display: inline-block;
-							padding: 0.9rem;
-							background: #ffffff;
-							border: 1px solid rgba(0, 0, 0, 0.08);
-							border-radius: 14px;
-							box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-						">
-							<img src="images/resume.jpg" alt="Preview of Fiona Meisner CV" style="
-									display: block;
-									max-width: 650px;
-									width: 100%;
-									height: auto;
-									border-radius: 8px;
-								" />
-						</div>
+					<div style="display: flex; flex-direction: column; gap: 1rem;">
+						<a href="mailto:meisnerfiona@gmail.com" class="btn btn-primary" style="width: fit-content;">Email Me
+							Directly</a>
+						<a href="https://www.linkedin.com/in/fiona-meisner/" target="_blank" class="btn btn-ghost"
+							style="width: fit-content;">View LinkedIn Profile ↗</a>
 					</div>
-
-					<p style="max-width: 620px; margin: 1.5rem auto 0; font-size: 0.95rem; color: #666; line-height: 1.6;">
-						A visual of my CV, as a quick reference within the portfolio.
-					</p>
-
+				</div>
+				<div class="cv-right fade-in">
+					<div class="cv-img-wrap">
+						<img src="images/resume.jpg" alt="Fiona Meisner CV preview" />
+					</div>
 				</div>
 			</div>
 		</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-		<section id="five">
-			<div class="container">
-				<div class="panel signature-panel" style="text-align: center;">
-
-					<span class="panel-tag">Let’s Connect</span>
-
-					<h3>Open to Data Analyst Opportunities With Real Business Impact</h3>
-
-					<p class="section-lead" style="max-width: 700px; margin: 0 auto;">
-						I’m particularly interested in roles across operational analytics, product analytics, customer insight,
-						risk reporting, and decision-support analysis where data can directly improve performance and influence
-						strategy.
-					</p>
-
-					<p style="max-width: 650px; margin: 1rem auto 2rem;">
-						If you’re looking for someone who can move beyond reporting and actively support stronger decisions
-						through data, I’d be glad to connect.
-					</p>
-
-					<ul class="actions"
-						style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; padding-left: 0;">
-
-						<li style="list-style: none;">
-							<a href="mailto:meisnerfiona@gmail.com" class="button primary"
-								style="display: inline-flex; align-items: center; justify-content: center; min-width: 150px;">
-								Email Me
-							</a>
-						</li>
-
-						<li style="list-style: none;">
-							<a href="https://www.linkedin.com/in/fiona-meisner/" class="button" target="_blank"
-								style="display: inline-flex; align-items: center; justify-content: center; min-width: 150px;">
-								View LinkedIn
-							</a>
-						</li>
-
-						<li style="list-style: none;">
-							<a href="https://github.com/meisnerfiona-it" class="button" target="_blank"
-								style="display: inline-flex; align-items: center; justify-content: center; min-width: 150px;">
-								View GitHub
-							</a>
-						</li>
-
-					</ul>
-
+		<!-- CONTACT -->
+		<section id="contact">
+			<div id="contact-inner">
+				<div class="section-label">Let's Connect</div>
+				<h2 class="contact-headline">Open to data analyst roles with real business impact.</h2>
+				<p class="contact-body">
+					I'm particularly interested in roles across operational analytics, product analytics, customer insight, risk
+					reporting, and decision-support analysis — where data can directly improve performance and influence strategy.
+				</p>
+				<div class="contact-links">
+					<a href="mailto:meisnerfiona@gmail.com" class="btn btn-primary">Email Me</a>
+					<a href="https://www.linkedin.com/in/fiona-meisner/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+					<a href="https://github.com/meisnerfiona-it" target="_blank" class="btn btn-ghost">GitHub ↗</a>
 				</div>
 			</div>
 		</section>
 
-		</div>
+	</main>
 
-		<section id="footer">
-			<div class="container">
-				<ul class="copyright">
-					<li>&copy; Fiona Meisner. Built to show analytical judgment, commercial value, and decision ready thinking.
-					</li>
-				</ul>
-			</div>
-		</section>
-	</div>
+	<footer>
+		© Fiona Meisner — Built to demonstrate analytical judgment, commercial value, and decision-ready thinking.
+	</footer>
 
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script>
+		const links = document.querySelectorAll('#nav a');
+		const sections = document.querySelectorAll('section[id], div[id]');
+
+		function setActive() {
+			let current = '';
+			sections.forEach(s => {
+				if (window.scrollY >= s.offsetTop - 120) current = s.id;
+			});
+			links.forEach(l => {
+				l.classList.remove('active');
+				if (l.getAttribute('href') === '#' + current) l.classList.add('active');
+			});
+		}
+
+		window.addEventListener('scroll', setActive, { passive: true });
+		setActive();
+
+		const obs = new IntersectionObserver(entries => {
+			entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+		}, { threshold: 0.12 });
+
+		document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+	</script>
 </body>
 
 </html>
