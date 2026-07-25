@@ -1224,6 +1224,36 @@
 
 			<div class="project-grid fade-in">
 
+			<article class="proj-card">
+				<img src="images/claims.jpg" alt="Insurance claims automation analysis" class="proj-image" />
+				<div class="proj-body">
+					<div class="proj-tags">
+						<span class="proj-category">Risk & Process Analytics</span>
+						<span class="proj-stack-pill">Python · XGBoost · GridSearchCV</span>
+					</div>
+					<h3 class="proj-title">Insurance Claims Automation: Manual Review vs. Straight-Through Processing</h3>
+					<p class="proj-summary">Built an end-to-end classification pipeline that separates low-risk insurance
+						claims — safe to auto-approve — from high-risk claims that genuinely need manual review, turning a
+						fraud model into an operational automation policy.</p>
+					<div class="proj-approach">Approach</div>
+					<ul class="proj-bullets">
+						<li>Cleaned 15,420 claims and engineered a business-defined review target instead of reusing the raw
+							fraud label; identified and corrected disguised missing data hiding inside a categorical field.</li>
+						<li>Compared Logistic Regression, Decision Tree, Random Forest, and XGBoost using GridSearchCV and
+							Stratified Cross-Validation, evaluated on F1 and ROC-AUC given a ~94/6 class imbalance.</li>
+						<li>Modeled the automation-rate vs. missed-fraud tradeoff across decision thresholds to convert model
+							output into a defensible, adjustable business policy.</li>
+					</ul>
+					<div class="proj-impact"><strong>Business impact:</strong> At a 0.25 decision threshold, the model
+						auto-approves 61.7% of claims while missing only 8.1% of fraud cases — an estimated 3,173 reviewer-hours
+						saved, with the threshold itself exposed as an adjustable business lever rather than a fixed output.</div>
+					<div class="proj-footer">
+						<a href="https://github.com/meisnerfiona-it/insurance-claims-process-optimisation" target="_blank"
+							class="proj-link primary">View on GitHub ↗</a>
+					</div>
+				</div>
+			</article>
+
 				<article class="proj-card">
 					<img src="images/Green_deal_unsplash.jpg" alt="European energy shock analysis" class="proj-image" />
 					<div class="proj-body">
